@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 3 — What LLMs Can and Can&#39;t Do — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 3 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">What LLMs Can and Can&#39;t Do</h1>
+    <p class="text-ink-muted font-sans text-base">5:51 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-03-episode-3-what-llms-can-and-can-t-do.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>5:51</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-03-episode-3-what-llms-can-and-can-t-do.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">
+        In this episode, we explore
+             drafting, summarising, translating, reformatting, brainstorming, comparing documents, explaining concepts,
+             factual accuracy (especially citations), mathematics, real-time information, remembering past conversations, professional judgment,
+             what it is, why it happens, and why the model cannot tell you when it&#39;s doing it,
+             lawyers have been sanctioned for submitting briefs with AI-fabricated citations that looked entirely legitimate,
+             you would never file a brief a junior drafted without reading it — the same standard applies to AI and
+             use AI for the first draft, never the final product — the tool changed, the professional responsibility didn&#39;t.
+    </p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Can-Do List</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Drafting, summarising, translating, reformatting, brainstorming, comparing documents, explaining concepts</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Can&#39;t-Do List</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Factual accuracy (especially citations), mathematics, real-time information, remembering past conversations, professional judgment</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Hallucination Explained</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">What it is, why it happens, and why the model cannot tell you when it&#39;s doing it</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Real Consequences</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Lawyers have been sanctioned for submitting briefs with AI-fabricated citations that looked entirely legitimate</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Junior Associate Analogy</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">You would never file a brief a junior drafted without reading it — the same standard applies to AI</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Verification Imperative</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Use AI for the first draft, never the final product — the tool changed, the professional responsibility didn&#39;t</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Welcome back to AI for Lawyers. We&#39;ve covered what AI is and how large language models work under the hood. Today is the practical episode — where should you trust these tools, and where should you absolutely not?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> This is the one I&#39;ve been waiting for. Because I think a lot of lawyers fall into one of two camps — either they&#39;re afraid to use AI at all, or they&#39;re using it without really understanding where the risks are.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Both of those positions are dangerous, honestly. So let&#39;s start with the good news — the things these models genuinely do well. The &#34;can do&#34; list is actually quite impressive for legal work.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> Okay, give me the highlight reel.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Drafting is the obvious one. First drafts of memos, emails, client updates, contract clauses — the model is remarkably good at producing coherent, well-structured text. Summarising is another strength. Hand it a fifty-page judgment and ask for a two-page summary, and the result is usually solid. It&#39;s also excellent at reformatting — take a wall of text and turn it into bullet points, a table, or a structured outline.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> What about comparing documents? I spend a lot of time reviewing redlines.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Comparison is a sweet spot. Give it two versions of a contract and ask what changed, and it will identify the differences with impressive accuracy. It&#39;s also strong at brainstorming — generating ideas, angles, counterarguments. And explaining complex concepts in simpler language. If you need to explain a technical legal principle to a non-lawyer client, these tools are genuinely helpful.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So the pattern is — anything that involves working with text that&#39;s already in front of it, it tends to do well.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s a great way to frame it. The model excels when the answer is in the input. Now let&#39;s talk about where it falls apart.  And this is where lawyers get into serious trouble.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> The &#34;can&#39;t do&#34; list.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Number one — and this cannot be overstated — factual accuracy, especially citations. The model will confidently generate case citations that do not exist. It will fabricate statute numbers. It will invent holdings. And it will do all of this in perfectly formatted legal prose that looks completely legitimate.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> That&#39;s terrifying.  Why does it do that?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Remember what we discussed last episode — it&#39;s a pattern-completion engine. It knows what a case citation looks like. It knows the pattern of &#34;In the matter of X versus Y, the court held that...&#34; So it generates text that follows that pattern. But it&#39;s not consulting a database of real cases. It&#39;s predicting what words would most plausibly come next. And sometimes the most plausible-sounding citation is one that doesn&#39;t exist.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> This is the hallucination problem.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And the critical thing to understand is that the model cannot tell you when it&#39;s hallucinating. It has no internal mechanism to flag uncertainty. It doesn&#39;t think, &#34;I&#39;m not sure about this citation, let me note that.&#34; It simply generates the most probable text. The confidence level in the output is always the same, whether the content is accurate or completely fabricated.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> And there have been real consequences for lawyers who didn&#39;t verify, haven&#39;t there?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> There have. Courts have sanctioned lawyers for submitting briefs containing AI-generated citations that turned out to be entirely fabricated.  These weren&#39;t obscure cases — they made headlines and became cautionary tales across the profession. The lawyers involved trusted the output because it looked right. The formatting was correct. The case names sounded plausible. But when the court or opposing counsel checked, the cases simply did not exist.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> What&#39;s the lesson there? Because I imagine those lawyers weren&#39;t trying to deceive anyone.  They just didn&#39;t verify.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s exactly the point. Intent doesn&#39;t matter when you&#39;ve filed a brief citing non-existent authority. The professional obligation to verify your work product doesn&#39;t disappear because a machine generated the first draft. And here&#39;s the analogy I keep coming back to — you would never file a brief that a junior associate drafted without reading it yourself. You wouldn&#39;t submit a contract your paralegal prepared without reviewing every clause. The same standard applies to AI-generated work.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So the AI is the junior, and you&#39;re still the supervising partner.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. And let me add a few more things to the &#34;can&#39;t do&#34; list. Mathematics — these models are unreliable with calculations. Don&#39;t use them for financial analysis or damages computations without independent verification. Real-time information — the model&#39;s training data has a cutoff date. It doesn&#39;t know about yesterday&#39;s court decision or last week&#39;s regulatory change. And professional judgment — the model cannot weigh competing considerations the way a practised lawyer can. It can&#39;t assess litigation risk. It can&#39;t read the room in a negotiation.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So what&#39;s the framework? How should a lawyer think about when to use these tools and when not to?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Here&#39;s my simple rule. Use AI for the first draft, never the final product. Use it for tasks where the answer is in the input — summarising, reformatting, comparing, brainstorming. Be deeply sceptical when it generates facts, citations, or numbers that you haven&#39;t independently verified. And always — always — apply the same standard of review you would apply to any work product from any source.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> That&#39;s the verification imperative.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s exactly what it is. The tool has changed. The professional responsibility hasn&#39;t. LLMs are powerful drafting and thinking tools. They are not research oracles. They are not substitutes for legal judgment. They are the most capable junior associate you&#39;ve ever worked with — and like every junior associate, their work needs to be checked.  Next time, we&#39;ll look at the AI ecosystem — the different models, tools, and platforms available, and how to tell them apart.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-02-episode-2-how-large-language-models-actually-work.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 2 — How Large Language Models Actually Work</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

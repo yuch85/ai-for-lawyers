@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 2 — How Large Language Models Actually Work — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 2 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">How Large Language Models Actually Work</h1>
+    <p class="text-ink-muted font-sans text-base">5:49 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-02-episode-2-how-large-language-models-actually-work.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>5:49</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-02-episode-2-how-large-language-models-actually-work.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">
+        In this episode, we explore
+             your phone keyboard, but trained on the entire internet,
+             reading billions of documents and adjusting billions of parameters to predict the next word,
+             why AI counts in chunks, not words, and why context limits matter for lawyers,
+             the context window is the model&#39;s desk — everything has to fit on it,
+             an LLM is like an intern who absorbed an entire law library but has never practised and
+             LLMs are pattern-completion engines — they generate statistically probable text, not verified truth.
+    </p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Autocomplete Analogy</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Your phone keyboard, but trained on the entire internet</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">What Training Means</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Reading billions of documents and adjusting billions of parameters to predict the next word</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Tokens and Context Windows</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Why AI counts in chunks, not words, and why context limits matter for lawyers</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Working Memory Metaphor</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">The context window is the model&#39;s desk — everything has to fit on it</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Well-Read Intern</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">An LLM is like an intern who absorbed an entire law library but has never practised</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Takeaway</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">LLMs are pattern-completion engines — they generate statistically probable text, not verified truth</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Welcome back to AI for Lawyers. Last time we talked about what AI actually is — the three waves, classify versus generate. Today we&#39;re going inside the machine. What actually happens when you type a question into ChatGPT or Claude? How does it produce that answer?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> Right, and I think this is where a lot of people&#39;s understanding gets fuzzy. They type something in, something comes back, and it feels like magic. But it&#39;s not magic.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is absolutely not magic. And the best analogy to start with is one you already use every day — your phone keyboard. When you start typing a message, your keyboard suggests the next word. Type &#34;looking forward to&#34; and it might suggest &#34;hearing,&#34; &#34;seeing,&#34; or &#34;meeting.&#34; That prediction is based on patterns your phone has learned from your typing history.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So you&#39;re saying ChatGPT is basically autocomplete?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> At its core, yes. A large language model is autocomplete trained on an enormous scale. Instead of learning from your text messages, it learned from billions of documents — books, websites, articles, code, legal filings, everything publicly available on the internet. And instead of predicting one word on your phone keyboard, it predicts the next word over and over again, thousands of times, to produce full paragraphs and pages of text.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> That reframes it completely. So when I ask it a legal question, it&#39;s not looking anything up. It&#39;s predicting what text would most likely come next based on patterns it absorbed during training.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And this is the single most important thing for lawyers to understand about these tools. The model does not have a database of facts it consults. It has statistical patterns about how words relate to each other. When it produces a correct answer, it&#39;s because the patterns it learned happen to align with reality. When it produces an incorrect answer — what we call a hallucination — it&#39;s because the statistically likely sequence of words doesn&#39;t match the facts.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> That explains why it sounds so confident even when it&#39;s wrong. It&#39;s not checking whether it&#39;s right. It&#39;s just generating the most probable next word.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. Confidence is baked into the output format, not earned through verification. The model produces text that reads like an expert wrote it, regardless of whether the content is accurate. This is why the verification imperative we discussed last time is so critical.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> Okay, so the model learns from training data. What does &#34;training&#34; actually look like? What&#39;s happening technically?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Think of it this way. The model starts as a massive mathematical structure — billions of adjustable numbers called parameters. During training, it reads a document, tries to predict the next word, checks whether it got it right, and then adjusts its parameters slightly to do better next time. It does this billions of times across billions of documents. By the end, those parameters encode patterns about language, facts, reasoning styles, and even things like tone and formality.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So when people say GPT-4 has a trillion parameters, those are essentially the knobs that got tuned during training?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s a useful way to think about it. More parameters generally means the model can capture more nuanced patterns. But more parameters also means more compute, more cost, and more potential for memorising things it shouldn&#39;t. The parameter count is like the capacity of the model&#39;s brain — how much it can hold.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> Now I keep hearing about tokens and context windows. What are those?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Great question. The model doesn&#39;t actually read words — it reads tokens. A token is a chunk of text, roughly three quarters of a word on average. The word &#34;understanding&#34; might be two tokens. A common word like &#34;the&#34; is one token. This matters because models have a limited number of tokens they can process at once — that&#39;s the context window.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So the context window is like the model&#39;s working memory?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. Think of it as the model&#39;s desk. Everything it needs to work with — your question, any documents you&#39;ve pasted in, the conversation so far, and the response it&#39;s generating — all has to fit on that desk. When the desk is full, the model starts losing track of things from earlier in the conversation. A model with a larger context window can hold more on its desk, but even the largest models have limits.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> That&#39;s why people say to keep your prompts focused rather than dumping an entire contract into the chat.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right. Strategic use of the context window is one of the core prompt engineering skills we&#39;ll cover later. For now, just understand that there&#39;s a real constraint on how much information the model can work with at any given moment.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> Let me try the legal analogy you used last time. An LLM is like a remarkably well-read intern who has absorbed an entire law library — every case, every textbook, every commentary. Fluent, fast, articulate. But they&#39;ve never actually practised law. They&#39;ve never stood in court, never negotiated a clause, never exercised professional judgment.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s exactly the right framing. And just like that intern, the model can produce work that looks polished and professional. But the quality of the underlying reasoning may not match the quality of the prose. A beautifully written legal memo that cites non-existent cases is worse than a rough draft that&#39;s factually sound.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Leo:</span> So the takeaway here is that these models are fundamentally pattern-completion engines. Incredibly powerful ones, but still pattern completion. They generate the most statistically probable text, not the most truthful text.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s it. And understanding this distinction is what separates a lawyer who uses AI effectively from one who gets burned by it. The model&#39;s superpower and its biggest risk are the same thing — it produces fluent, confident text whether or not it&#39;s correct. Your job is to bring the judgment, the verification, and the professional expertise that the model cannot. Next time, we&#39;ll get specific about exactly where these tools excel and where they reliably fall short.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-01-episode-1-what-is-ai-really.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 1 — What Is AI, Really?</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

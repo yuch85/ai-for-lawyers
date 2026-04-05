@@ -6,50 +6,46 @@
     <title>AI for Lawyers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- InterVariable font loaded from Google Fonts CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
     <link rel="stylesheet" href="./assets/css/plyr.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
 </head>
-<body class="bg-white text-slate-700 antialiased">
-    <div class="mx-auto max-w-4xl px-6 py-8">
-        <header class="mb-10 border-b border-slate-200 pb-6">
-            <nav class="flex items-center justify-between">
-                <a href="./index.html" class="text-xl font-semibold tracking-tight text-slate-900 hover:text-blue-700 transition-colors">AI for Lawyers</a>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="./index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="./index.html" class="hover:text-red transition">Episodes</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main class="min-h-[60vh]">
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<div class="py-12 border-b border-rule">
+    <h1 class="text-5xl md:text-6xl font-bold leading-none mb-6">AI for Lawyers</h1>
+    
+    <p class="text-xl italic text-ink-light leading-relaxed">A 16-episode podcast series taking lawyers from &#39;I&#39;ve heard of ChatGPT&#39; to confidently using AI tools</p>
+    
+    <p class="mt-4 font-sans text-base text-ink-muted">1 episode</p>
+</div>
+
+<section class="py-10">
+    <div class="space-y-0">
+        
+        
+        <a href="./lessons/lesson-01-episode-1-what-is-ai-really.html" class="block border-b border-rule hover:bg-white/50 transition-colors">
+    <div class="py-8 flex items-start justify-between gap-6">
+        <div class="min-w-0 flex-1">
+            <p class="font-sans text-sm tracking-widest uppercase text-red mb-2">Episode 1</p>
+            <h3 class="text-2xl font-bold mb-2">Episode 1 — What Is AI, Really?</h3>
             
-<section class="mb-12">
-    <h1 class="text-3xl font-bold tracking-tight text-slate-900">AI for Lawyers</h1>
-    
-    <p class="mt-3 text-lg text-slate-600 leading-relaxed">A 16-episode podcast series taking lawyers from &#39;I&#39;ve heard of ChatGPT&#39; to confidently using AI tools</p>
-    
-    <p class="mt-2 text-sm font-medium text-slate-500">1 lessons</p>
-</section>
-
-<section>
-    <div class="space-y-4">
-        
-        
-        <a href="./lessons/lesson-01-episode-1-what-is-ai-really.html" class="block">
-    <div class="bg-white border border-slate-200 rounded-lg p-6 hover:border-slate-300 transition-colors">
-        <div class="flex items-start justify-between gap-4">
-            <div class="min-w-0 flex-1">
-                <p class="text-sm font-medium text-slate-500 mb-1">Lesson 1</p>
-                <h3 class="text-lg font-semibold text-slate-800 mb-1">Episode 1 — What Is AI, Really?</h3>
-                
-                <p class="text-sm text-slate-600 line-clamp-2">Cold Open &middot; Three Waves of AI &middot; Classify vs Generate &middot; Legal Analogies &middot; Why This Wave Is Different &middot; Takeaway</p>
-                
-            </div>
-            <div class="flex-shrink-0">
-                <span class="text-sm text-slate-500 whitespace-nowrap">6:25</span>
-            </div>
+            <p class="text-base text-ink-light">Cold Open &middot; Three Waves of AI &middot; Classify vs Generate &middot; Legal Analogies &middot; Why This Wave Is Different &middot; Takeaway</p>
+            
+        </div>
+        <div class="flex-shrink-0 pt-2">
+            <span class="font-sans text-base text-ink-muted whitespace-nowrap">6:14</span>
         </div>
     </div>
 </a>
@@ -58,12 +54,13 @@
     </div>
 </section>
 
-        </main>
+    </main>
 
-        <footer class="mt-16 border-t border-slate-200 pt-6 pb-8">
-            <p class="text-sm text-slate-400">AI for Lawyers. All rights reserved.</p>
-        </footer>
-    </div>
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
 
     <script src="./assets/js/plyr.js"></script>
     

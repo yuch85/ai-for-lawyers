@@ -50,179 +50,230 @@
 
 
 <section class="mb-10">
-    <h2 class="text-2xl font-semibold text-slate-900 mb-4">Outline</h2>
+    <h2 class="text-2xl font-semibold text-slate-900 mb-4">What This Episode Covers</h2>
     <div class="prose prose-slate max-w-none">
-        <ol class="space-y-2">
-            
-            <li class="text-base text-slate-700">Cold Open</li>
-            
-            <li class="text-base text-slate-700">Three Waves of AI</li>
-            
-            <li class="text-base text-slate-700">Classify vs Generate</li>
-            
-            <li class="text-base text-slate-700">Legal Analogies</li>
-            
-            <li class="text-base text-slate-700">Why This Wave Is Different</li>
-            
-            <li class="text-base text-slate-700">Takeaway</li>
-            
-        </ol>
+        <p class="text-base text-slate-700 leading-relaxed">
+            In this episode, we explore
+                 the gap between ai in movies and ai on your laptop,
+                 rule-based systems (1950s), machine learning (2000s), generative ai (2020s),
+                 ai that sorts (spam filters, e-discovery) vs ai that creates (chatgpt, copilot),
+                 rule-based = checklist; ml = junior learning from examples; genai = junior who can draft,
+                 it speaks natural language — the barrier to entry disappeared overnight and
+                 ai is a spectrum. what&#39;s new is the interface, not the concept..
+        </p>
     </div>
 </section>
 
 
 
 <section class="mb-12">
-    <h2 class="text-2xl font-semibold text-slate-900 mb-4">Transcript</h2>
-    <article class="prose prose-slate max-w-none text-base leading-relaxed">
+    <button
+        id="transcript-toggle"
+        class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-700 transition-colors cursor-pointer mb-4"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        Show Transcript
+    </button>
+    <article id="transcript-body" class="hidden prose prose-slate max-w-none text-base leading-relaxed">
         
         
-        <p>&lt;Person1&gt;Welcome to AI for Lawyers. I&#39;m here with my co-host, and today we&#39;re tackling the most basic question there is — what is artificial intelligence, really? Not the movie version, not the hype version, but the version that actually matters for your practice.&lt;/Person1&gt;</p>
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Welcome to AI for Lawyers. I&#39;m here with my co-host, and today we&#39;re tackling the most basic question there is — what is artificial intelligence, really? Not the movie version, not the hype version, but the version that actually matters for your practice.</p>
         
         
         
         
-        <p>&lt;Person2&gt;Right, and I think that&#39;s where a lot of lawyers get stuck. You hear &#34;AI&#34; and you picture some science fiction scenario — robots taking over courtrooms. But the reality is so much more mundane and honestly more useful than that.&lt;/Person2&gt;</p>
         
         
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> Right, and I think that&#39;s where a lot of lawyers get stuck. You hear &#34;AI&#34; and you picture some science fiction scenario — robots taking over courtrooms. But the reality is so much more mundane and honestly more useful than that.</p>
         
         
-        <p>&lt;Person1&gt;Exactly. So let&#39;s break this down. Artificial intelligence isn&#39;t one single technology. It&#39;s actually been developing in three distinct waves over the past seventy years, and understanding these waves helps you understand what the tools on your desk can actually do.&lt;/Person1&gt;</p>
         
         
         
         
         
-        <p>&lt;Person2&gt;Okay, three waves. Walk me through them.&lt;/Person2&gt;</p>
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Exactly. So let&#39;s break this down. Artificial intelligence isn&#39;t one single technology. It&#39;s actually been developing in three distinct waves over the past seventy years, and understanding these waves helps you understand what the tools on your desk can actually do.</p>
         
         
         
         
         
-        <p>&lt;Person1&gt;The first wave started in the nineteen fifties. These were rule-based systems. You literally program in a set of if-then rules. If the contract contains this clause, flag it. If the email matches these patterns, it&#39;s spam. Very rigid, very predictable. Think of it as a checklist — it can only do exactly what someone told it to do.&lt;/Person1&gt;</p>
         
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> Okay, three waves. Walk me through them.</p>
         
         
         
-        <p>&lt;Person2&gt;So that&#39;s basically the document review tools that have been around for a while? The ones that flag certain keywords?&lt;/Person2&gt;</p>
         
         
         
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> The first wave started in the nineteen fifties. These were rule-based systems. You literally program in a set of if-then rules. If the contract contains this clause, flag it. If the email matches these patterns, it&#39;s spam. Very rigid, very predictable. Think of it as a checklist — it can only do exactly what someone told it to do.</p>
         
-        <p>&lt;Person1&gt;Precisely. And those tools are genuinely useful, but they have obvious limits. They can&#39;t handle anything they weren&#39;t explicitly programmed for. Which brings us to the second wave — machine learning — which really took off in the two thousands. Instead of writing rules by hand, you give the system thousands of examples and let it figure out the patterns on its own.&lt;/Person1&gt;</p>
         
         
         
         
         
-        <p>&lt;Person2&gt;So instead of telling it &#34;spam looks like this,&#34; you show it ten thousand spam emails and ten thousand legitimate ones, and it learns the difference.&lt;/Person2&gt;</p>
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> So that&#39;s basically the document review tools that have been around for a while? The ones that flag certain keywords?</p>
         
         
         
         
-        <p>&lt;Person1&gt;That&#39;s it. And in legal tech, this is what powers e-discovery tools, predictive coding, and contract analysis platforms. The system learns from examples that humans label. Think of it like a junior associate who learns by reviewing hundreds of documents — after enough examples, they start recognising patterns you never explicitly taught them.&lt;/Person1&gt;</p>
         
         
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Precisely. And those tools are genuinely useful, but they have obvious limits. They can&#39;t handle anything they weren&#39;t explicitly programmed for. Which brings us to the second wave — machine learning — which really took off in the two thousands. Instead of writing rules by hand, you give the system thousands of examples and let it figure out the patterns on its own.</p>
         
         
-        <p>&lt;Person2&gt;That&#39;s actually a really helpful analogy. So where does the third wave come in? That&#39;s the generative AI everyone&#39;s talking about now?&lt;/Person2&gt;</p>
         
         
         
         
         
-        <p>&lt;Person1&gt;Right. The third wave — generative AI — is what exploded onto the scene around twenty twenty-two with tools like ChatGPT. Here&#39;s the fundamental difference: the first two waves are about classifying things. Is this spam or not? Is this document relevant or not? Generative AI creates new content. It can draft a memo, summarise a judgment, compose an email, rewrite a clause in simpler language.&lt;/Person1&gt;</p>
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> So instead of telling it &#34;spam looks like this,&#34; you show it ten thousand spam emails and ten thousand legitimate ones, and it learns the difference.</p>
         
         
         
         
         
-        <p>&lt;Person2&gt;So the distinction is between AI that sorts and categorises versus AI that actually produces something new.&lt;/Person2&gt;</p>
         
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> That&#39;s it. And in legal tech, this is what powers e-discovery tools, predictive coding, and contract analysis platforms. The system learns from examples that humans label. Think of it like a junior associate who learns by reviewing hundreds of documents — after enough examples, they start recognising patterns you never explicitly taught them.</p>
         
         
         
-        <p>&lt;Person1&gt;Exactly. And this is crucial for lawyers to understand because the risks are completely different. A classification system might miss a relevant document — that&#39;s a recall problem. A generative system might confidently produce something that sounds perfectly plausible but is entirely wrong. We&#39;ll get into that in a future episode, but for now, just understand that these are fundamentally different capabilities with different failure modes.&lt;/Person1&gt;</p>
         
         
         
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> That&#39;s actually a really helpful analogy. So where does the third wave come in? That&#39;s the generative AI everyone&#39;s talking about now?</p>
         
-        <p>&lt;Person2&gt;That makes sense. Now, I&#39;ve been practising for years and honestly, I&#39;ve been using some form of AI without even realising it. My email spam filter, the search algorithms in legal databases — those are all AI?&lt;/Person2&gt;</p>
         
         
         
         
         
-        <p>&lt;Person1&gt;Absolutely. AI has been embedded in legal technology for over a decade. Predictive coding in e-discovery platforms, automated citation checking, contract analysis tools that compare clauses against your firm&#39;s playbook — all of these use machine learning under the hood. What&#39;s changed isn&#39;t that AI entered the legal world. What&#39;s changed is the interface.&lt;/Person1&gt;</p>
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Right. The third wave — generative AI — is what exploded onto the scene around twenty twenty-two with tools like ChatGPT. Here&#39;s the fundamental difference: the first two waves are about classifying things. Is this spam or not? Is this document relevant or not? Generative AI creates new content. It can draft a memo, summarise a judgment, compose an email, rewrite a clause in simpler language.</p>
         
         
         
         
-        <p>&lt;Person2&gt;What do you mean by the interface?&lt;/Person2&gt;</p>
         
         
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> So the distinction is between AI that sorts and categorises versus AI that actually produces something new.</p>
         
         
-        <p>&lt;Person1&gt;Previous AI tools required specialised training. You needed to understand how to set up a predictive coding workflow, how to train a classifier. Generative AI tools speak natural language. You type a question or instruction in plain English — or any language, really — and you get a response in plain English. That&#39;s why this wave feels so different. The barrier to entry essentially disappeared overnight.&lt;/Person1&gt;</p>
         
         
         
         
         
-        <p>&lt;Person2&gt;So a lawyer who has never touched a technology tool beyond Word and email can now sit down with ChatGPT or Claude and immediately start getting useful output.&lt;/Person2&gt;</p>
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Exactly. And this is crucial for lawyers to understand because the risks are completely different. A classification system might miss a relevant document — that&#39;s a recall problem. A generative system might confidently produce something that sounds perfectly plausible but is entirely wrong. We&#39;ll get into that in a future episode, but for now, just understand that these are fundamentally different capabilities with different failure modes.</p>
         
         
         
         
         
-        <p>&lt;Person1&gt;In principle, yes. Though &#34;useful&#34; is doing a lot of heavy lifting in that sentence. The quality of what you get depends enormously on how you ask for it — that&#39;s prompt engineering, which we&#39;ll cover in depth later in this series. But the accessibility is genuinely revolutionary. For the first time, lawyers can interact with AI tools using the same skill they&#39;ve been honing their entire career — clear, precise language.&lt;/Person1&gt;</p>
         
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> That makes sense. Now, I&#39;ve been practising for years and honestly, I&#39;ve been using some form of AI without even realising it. My email spam filter, the search algorithms in legal databases — those are all AI?</p>
         
         
         
-        <p>&lt;Person2&gt;I like that framing. Lawyers are essentially professional communicators, and now the tools respond to communication rather than code.&lt;/Person2&gt;</p>
         
         
         
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Absolutely. AI has been embedded in legal technology for over a decade. Predictive coding in e-discovery platforms, automated citation checking, contract analysis tools that compare clauses against your firm&#39;s playbook — all of these use machine learning under the hood. What&#39;s changed isn&#39;t that AI entered the legal world. What&#39;s changed is the interface.</p>
         
-        <p>&lt;Person1&gt;That&#39;s exactly right. And that&#39;s also why lawyers are actually well-positioned to use these tools effectively. Precision in language is what you do. The lawyers who will get the most out of generative AI are the ones who can give it clear, structured instructions — which is just good brief-writing applied to a different medium.&lt;/Person1&gt;</p>
         
         
         
         
         
-        <p>&lt;Person2&gt;Okay, so let me see if I can summarise where we&#39;ve landed. AI isn&#39;t one thing — it&#39;s a spectrum. We&#39;ve got rule-based systems that follow explicit instructions, machine learning that learns from examples, and generative AI that creates new content from patterns. All three are already in legal tech, but generative AI is the breakthrough because it speaks our language.&lt;/Person2&gt;</p>
         
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> What do you mean by the interface?</p>
         
         
         
         
-        <p>&lt;Person1&gt;Perfect summary. And here&#39;s the key takeaway for today: you don&#39;t need to become a computer scientist. You don&#39;t need to understand the maths behind neural networks. What you need is a working mental model of what these tools can do, what they cannot do, and where the risks lie. That&#39;s what this entire series is about — giving you that mental model so you can make informed decisions about how AI fits into your practice.&lt;/Person1&gt;</p>
         
         
         
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Previous AI tools required specialised training. You needed to understand how to set up a predictive coding workflow, how to train a classifier. Generative AI tools speak natural language. You type a question or instruction in plain English — or any language, really — and you get a response in plain English. That&#39;s why this wave feels so different. The barrier to entry essentially disappeared overnight.</p>
         
         
-        <p>&lt;Person2&gt;And we&#39;re going to dig into exactly how these generative models work under the hood in our next episode — in a way that&#39;s actually useful, not just academic.&lt;/Person2&gt;</p>
         
         
         
         
         
-        <p>&lt;Person1&gt;Exactly. We&#39;ll look at what happens when you type a question into ChatGPT, why the output sounds so confident, and why that confidence can be misleading. Until then, the one thing I&#39;d encourage you to take away from today is this — AI is not magic, and it&#39;s not new. What&#39;s new is that it now speaks your language. Thanks for listening.&lt;/Person1&gt;</p>
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> So a lawyer who has never touched a technology tool beyond Word and email can now sit down with ChatGPT or Claude and immediately start getting useful output.</p>
         
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> In principle, yes. Though &#34;useful&#34; is doing a lot of heavy lifting in that sentence. The quality of what you get depends enormously on how you ask for it — that&#39;s prompt engineering, which we&#39;ll cover in depth later in this series. But the accessibility is genuinely revolutionary. For the first time, lawyers can interact with AI tools using the same skill they&#39;ve been honing their entire career — clear, precise language.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> I like that framing. Lawyers are essentially professional communicators, and now the tools respond to communication rather than code.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> That&#39;s exactly right. And that&#39;s also why lawyers are actually well-positioned to use these tools effectively. Precision in language is what you do. The lawyers who will get the most out of generative AI are the ones who can give it clear, structured instructions — which is just good brief-writing applied to a different medium.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> Okay, so let me see if I can summarise where we&#39;ve landed. AI isn&#39;t one thing — it&#39;s a spectrum. We&#39;ve got rule-based systems that follow explicit instructions, machine learning that learns from examples, and generative AI that creates new content from patterns. All three are already in legal tech, but generative AI is the breakthrough because it speaks our language.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Perfect summary. And here&#39;s the key takeaway for today: you don&#39;t need to become a computer scientist. You don&#39;t need to understand the maths behind neural networks. What you need is a working mental model of what these tools can do, what they cannot do, and where the risks lie. That&#39;s what this entire series is about — giving you that mental model so you can make informed decisions about how AI fits into your practice.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-emerald-700">Leo:</span> And we&#39;re going to dig into exactly how these generative models work under the hood in our next episode — in a way that&#39;s actually useful, not just academic.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="mb-3"><span class="font-semibold text-blue-700">Tara:</span> Exactly. We&#39;ll look at what happens when you type a question into ChatGPT, why the output sounds so confident, and why that confidence can be misleading. Until then, the one thing I&#39;d encourage you to take away from today is this — AI is not magic, and it&#39;s not new. What&#39;s new is that it now speaks your language. Thanks for listening.</p>
         
         
         

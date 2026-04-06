@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 9 — RAG: How AI Gets Smarter When You Give It a Library — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 9 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">RAG: How AI Gets Smarter When You Give It a Library</h1>
+    <p class="text-ink-muted font-sans text-base">8:19 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg id="icon-play" class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-pause" class="w-6 h-6 text-ink group-hover:text-paper hidden" fill="currentColor" viewBox="0 0 20 20"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-09-episode-9-rag-how-ai-gets-smarter-when-you-give-it-a-library.mp3" type="audio/mpeg">
+            </audio>
+            <div id="progress-bar" class="h-3 bg-rule relative cursor-pointer" style="margin-top:-6px;padding-top:6px;padding-bottom:6px;">
+                <div class="h-px bg-rule relative">
+                    <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red"></div>
+                    <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red"></div>
+                </div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>8:19</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-09-episode-9-rag-how-ai-gets-smarter-when-you-give-it-a-library.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">What changes when you connect AI to actual documents? We explain retrieval-augmented generation, why semantic search beats keyword search for legal work, and when you need RAG versus just pasting into the context window.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Tension Resolved</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Don&#39;t use AI to find authorities — but DO use it to analyse documents you provide. The difference is RAG.</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">What RAG Actually Does</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Retrieve relevant passages first, then generate. Same AI, smarter input.</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Semantic Search</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Matches meaning, not keywords — finds relevant clauses even when the language differs entirely.</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Context Window vs RAG</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Pasting works for one document. RAG is essential at scale and avoids attention dilution.</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Where You&#39;ve Seen RAG</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Harvey, CoCounsel, LawNet AI — most legal AI tools are RAG systems under the hood.</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Limits</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Retrieval quality is everything. Systems need tuning, and human review is still non-negotiable.</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Tara, I have a question that&#39;s been bugging me since episode three. You told us not to use AI to find legal authorities because it fabricates citations. But you also said AI is powerful for analysing documents. how do those two things fit together?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s exactly where we&#39;re going today. The difference comes down to whether the model is generating from its training data — where hallucination lives — or from documents you&#39;ve actually pointed it at. And that distinction has a name. Retrieval-augmented generation. RAG for short.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> RAG. Okay, break that down for me.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> let&#39;s start with why the problem exists. An LLM is frozen after training. It can&#39;t look things up. It has no library, no database it can search. The context window — whatever you put in the prompt — is everything the model knows about your task. that&#39;s it. Nothing else.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And that&#39;s why it fabricates citations?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. You ask it to find a case, it has no library to search, so it generates the most statistically plausible case name, citation, and holding. Fluent, confident... fabricated.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the model isn&#39;t being deceptive — it literally has nowhere to look.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right. Now, what RAG does is add a retrieval step before generation. the system searches a specified document collection — your contracts, your case law database, your firm&#39;s precedents — retrieves the passages most relevant to your question, inserts them into the context window, and then the model generates from that material. Not from its general training.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So it&#39;s a two-step process. Retrieve, then generate.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And this is important — RAG isn&#39;t a different kind of AI. It&#39;s a smarter way of feeding information to the same AI. think of it this way. Without RAG, you&#39;re asking a well-read associate to answer from memory. With RAG, you&#39;re handing them the relevant files first.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  That&#39;s a huge difference in legal practice.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is. And the tool&#39;s system prompt — we covered those invisible layers in episode four — typically instructs the model to answer only from retrieved material and flag when it can&#39;t find something relevant. That instruction is what keeps it grounded.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> but how does the retrieval part actually work? Is it just keyword search?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> No, and this is where it gets really interesting for lawyers. traditional legal research relies on keyword search. You type exact terms, the system finds documents containing those terms. But what happens when the document uses different language? &#34;Termination for cause&#34; versus &#34;dismissal for misconduct.&#34; Or &#34;force majeure&#34; versus &#34;unforeseeable circumstances beyond reasonable control.&#34; Keyword search misses those matches entirely.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  And those are exactly the kinds of connections lawyers need to make.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. RAG-enabled systems use semantic search. Instead of matching exact words, the system matches meaning. It understands that two passages are about the same concept even when they use entirely different language. this is why RAG can surface a relevant clause buried on page one-eighty of a two-hundred-page agreement that a keyword search would miss — the clause uses none of your search terms, but it addresses exactly your question.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so semantic search catches conceptual relevance, not just word overlap?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. For lawyers, this is transformative. Think about how often the critical provision in a contract or the decisive paragraph in a judgment doesn&#39;t use the exact phrase you&#39;d search for.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and what does this mean for accuracy? Because that&#39;s been the big concern all along.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Hallucination risk drops substantially when the model is grounded in actual documents. The failure modes shift to the reviewable errors we discussed in episode seven — omission, mischaracterisation, anchoring — and crucially, you have source documents to check against. trust-building features become possible too. Direct citations tracing each claim to a specific passage. Confidence scores. Reasoning trails. Review becomes targeted rather than from-scratch verification.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> but here&#39;s something I keep hearing. Context windows are huge now — some models accept two hundred thousand tokens. Can&#39;t I just paste everything in?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span>  Good question, and the answer is — sometimes, but not always. Two reasons. First, practical ceiling. A trial bundle, a precedent library, a full data room won&#39;t fit in any context window. second — and this is the subtle one — attention dilution. Models don&#39;t attend equally to everything in long inputs. Information in the middle of very long contexts gets less attention. A clause buried deep in a three-hundred-page document may be missed... not because the model can&#39;t see it, but because its attention is spread too thin.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so RAG solves this by being selective?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. It retrieves specific relevant passages so the model&#39;s attention is focused, not diluted. for most lawyers starting out, the context window approach covers eighty percent of daily tasks. One contract, one judgment — upload it, ask questions, done. RAG becomes essential at scale — large collections, repeated queries, persistent access across sessions.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and I suspect we&#39;ve already been using RAG without knowing it?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Almost certainly. Legal AI tools — Harvey, CoCounsel, LawNet AI — are RAG systems. The &#34;legal AI tool&#34; wrapper from episode four is, in most cases, RAG with a specialised document collection behind it. Even uploading a PDF to Claude or ChatGPT and asking questions about it is a basic form of the same principle. You&#39;re grounding the model in material you provide.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> but RAG isn&#39;t perfect either, right?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span>  No. And this matters. Retrieval quality is everything. If the retrieval step pulls the wrong passages — imprecise query, incomplete collection, poor indexing — the model generates confidently from the wrong material. Semantic search is powerful but imperfect. It can miss relevant passages, especially in highly technical or jurisdiction-specific content where meaning is nuanced.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So the system needs tuning?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> significant tuning. RAG systems need calibration to perform well on legal material. The out-of-the-box experience is rarely the final product. Retrieval precision improves with better indexing, better chunking of documents, and iterative testing against real legal queries. the model can still misinterpret what it retrieves. All error modes from episode seven remain in play. Human review is non-negotiable.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and you need to ask the vendor the right questions too.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Absolutely. Key question — is the tool drawing only from my documents, or supplementing from its training data? That&#39;s the due diligence from episode five applied here. ... So the takeaway. RAG is what turns AI from a confident guesser into a tool that works from evidence — and semantic search means it finds relevant material that keyword searches miss entirely. For lawyers, this is the architecture that makes AI useful for substantive legal work. But retrieval quality varies, systems need fine-tuning, and human review still sits at the end of every workflow.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And next time we start getting hands-on — the four building blocks of a good prompt. Turns out, giving instructions to an AI is a lot like briefing a new associate. Thanks for listening — see you next time. ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-08-episode-8-professional-and-ethical-responsibilities.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 8 — Professional and Ethical Responsibilities</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const bar = document.getElementById('progress-bar');
+    const timeEl = document.getElementById('current-time');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+
+    // Toggle play/pause icons
+    audio.addEventListener('play', function() {
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+    });
+    audio.addEventListener('pause', function() {
+        iconPause.classList.add('hidden');
+        iconPlay.classList.remove('hidden');
+    });
+
+    // Progress update
+    audio.addEventListener('timeupdate', function() {
+        if (dragging) return;
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+
+    // Seek on click/drag
+    let dragging = false;
+    function seek(e) {
+        const rect = bar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        fill.style.width = (pct * 100) + '%';
+        dot.style.left = (pct * 100) + '%';
+        audio.currentTime = pct * audio.duration;
+    }
+    bar.addEventListener('mousedown', function(e) { dragging = true; seek(e); });
+    document.addEventListener('mousemove', function(e) { if (dragging) seek(e); });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    bar.addEventListener('touchstart', function(e) { dragging = true; seek(e.touches[0]); }, {passive: true});
+    document.addEventListener('touchmove', function(e) { if (dragging) seek(e.touches[0]); });
+    document.addEventListener('touchend', function() { dragging = false; });
+</script>
+
+</body>
+</html>

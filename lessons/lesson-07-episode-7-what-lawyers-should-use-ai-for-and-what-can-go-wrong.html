@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 7 — What Lawyers Should Use AI For (And What Can Go Wrong) — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 7 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">What Lawyers Should Use AI For (And What Can Go Wrong)</h1>
+    <p class="text-ink-muted font-sans text-base">9:09 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-07-episode-7-what-lawyers-should-use-ai-for-and-what-can-go-wrong.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>9:09</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-07-episode-7-what-lawyers-should-use-ai-for-and-what-can-go-wrong.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">Where does AI actually help, where does it fail, and how do you decide what&#39;s good enough? We map use cases to error modes and build a risk tolerance framework for every task.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Right Question</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Accuracy is relative — AI needs to beat the realistic alternative, not be perfect</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Risk Tolerance Framework</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Low error cost + human review = strong use case. High error cost + no review = dangerous</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Four Error Modes</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Hallucination, omission, plausible mischaracterisation, and anchoring</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Use Cases Mapped to Risk</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Summarisation, contracts, drafting, and the danger zone of legal research</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Review Principle</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">AI changes what happens before your review — it doesn&#39;t eliminate the review</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Welcome back to AI for Lawyers. I&#39;m Tara, here with Dan. We&#39;ve covered the foundations — what AI is, how it works, the ecosystem, confidentiality. Today we&#39;re getting practical. Where does AI actually help in legal work, where does it fail, and how do you decide what&#39;s good enough?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I think this is the episode a lot of lawyers have been waiting for. Because the theory is great, but everyone wants to know — can I actually use this for my work?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> And the answer is yes — but with a framing that most people get wrong. the question lawyers keep asking is &#34;is AI output accurate?&#34; And that&#39;s the wrong question.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> What&#39;s the right question?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> The right question is — is it more accurate than the realistic alternative, given the time and resources available?  Because here&#39;s the thing nobody talks about. A human under time pressure also misses things. Also makes judgment calls about what&#39;s important. Also produces imperfect first drafts. AI doesn&#39;t need to be perfect. It needs to be better than the realistic counterfactual.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> but &#34;better&#34; is doing a lot of work in that sentence.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is. And &#34;better&#34; includes speed. If AI gets you to eighty-five percent accuracy in ten minutes and a human gets you to ninety-two percent in three hours, the right answer depends entirely on what the task is and what happens next in the workflow. For a first-pass triage of a hundred documents? Eighty-five percent in ten minutes is extraordinary. For a final submission to court? You need the ninety-two — and the human review on top.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so it&#39;s about matching the tool to the task.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And that brings us to the risk tolerance framework. Every use case has a different error cost. the question to ask before using AI for any task is this — what happens if the output is wrong or incomplete, and what review process sits between the AI output and the final work product?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Can you give me the spectrum?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Simple. Low cost of error plus human review afterwards — that&#39;s a strong AI use case. High cost of error plus no review step — that&#39;s a dangerous AI use case. Most legal tasks fall somewhere in between. And the skill is calibrating where on that spectrum each task sits.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s a clean framework. So a first draft of an internal memo — low risk, because someone reviews it. But a citation in a court filing — high risk, because if it&#39;s wrong and nobody catches it, you&#39;re sanctioned.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. now let me walk through the error modes, because hallucination gets all the attention, but it&#39;s only one of four ways AI can fail you.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> There are four?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Four that matter for lawyers. First — hallucination. The model invents information. This is highest risk when you ask it to find or cite things rather than work with material you provide. We&#39;ve covered this extensively. Second — and this is the hidden one — omission. The model leaves out something important.  This is the real risk in summarisation. The output is accurate in what it says but misleading in what it drops.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the summary could be technically correct but still dangerous?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Absolutely. A model summarising a judgment will decide what&#39;s &#34;important&#34; based on statistical patterns, not legal judgment. It may drop a critical qualification or a factual finding that matters for your specific purpose. you won&#39;t notice what&#39;s missing unless you go back to the source.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That&#39;s unsettling. What&#39;s the third error mode?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Plausible mischaracterisation. The model describes something in a way that&#39;s technically not wrong but subtly shifts the meaning. paraphrasing a discretion as an obligation. Softening a hard prohibition. Eliding a condition precedent. The output reads perfectly. The nuance is gone.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s almost worse than hallucination because it&#39;s so hard to catch.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is harder to catch. And that leads to the fourth mode — sycophancy. The model tells you what you want to hear.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> What do you mean?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> this goes back to how these models are trained. There&#39;s a process called reinforcement learning from human feedback — RLHF — where the model is essentially rewarded for producing responses that humans rate as helpful and satisfying. The side effect is that the model learns to agree with you. If you pitch it an argument and ask &#34;does this work?&#34;, it is structurally inclined to say yes and build on your position rather than tear it apart.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so it&#39;s like asking a junior who&#39;s afraid of you whether your argument is any good.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span>  Worse — because at least the junior knows they&#39;re holding back. The model doesn&#39;t have that self-awareness. It will enthusiastically validate a weak argument, help you build it out, and never flag that the foundation is shaky. this is the real danger for brainstorming and strategy work. You come in with a theory, you ask the AI to develop it, and you get back a polished, confident version of your own thinking — with all your blind spots baked in.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the one use case where you&#39;d think AI would be most useful — pressure-testing your ideas — is actually where this hits hardest.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And the mitigation is counterintuitive. Don&#39;t ask the model &#34;is this a good argument?&#34; Ask it &#34;what are the three strongest arguments against this position?&#34; Force it into an adversarial role explicitly — because it won&#39;t go there on its own. check whether the counterarguments it gives you are genuinely tough or just soft objections it can immediately resolve in your favour.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s a really specific technique. Assign the role rather than hoping it&#39;ll push back naturally.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right. Because the training incentive runs the other way. The model wants to be helpful and agreeable.  Your job is to deliberately structure your prompts so that disagreement becomes the helpful response.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. now let&#39;s map specific use cases to these risks. Summarisation — useful, fast, but treat every summary as a triage tool, not a finished analysis. The risk is omission. Mitigation — always go back to the source document for anything that matters. Use the summary to orient yourself, not to replace reading.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> what about contract work?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Contract review and comparison is one of the strongest use cases. You&#39;re giving the model the source material and asking it to compare against a standard. The risk is plausible mischaracterisation of a clause. Mitigation — specify exactly what you&#39;re looking for rather than asking for a general review, and verify any flagged clause against the original.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And drafting?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> drafting is good for first drafts, fluency, restructuring, and overcoming blank-page paralysis. The risk is that the draft sounds authoritative but contains generic formulations that don&#39;t fit your specific deal or jurisdiction. Mitigation — provide examples of what you want, constrain the source material, and always treat the output as a first draft requiring substantive revision.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and legal research? That&#39;s the danger zone you keep mentioning.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is. General-purpose AI tools will fabricate citations.  Do not use them to find authorities. Use them to analyse material you&#39;ve already found, to explain concepts, or to brainstorm angles. There are emerging architectures — retrieval-augmented generation — that connect models to verified sources, and we&#39;ll cover those in a dedicated episode.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So the review principle that ties all of this together?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> AI changes what happens before your review. It doesn&#39;t eliminate the review. Your job shifts from &#34;produce the first draft&#34; to &#34;critically evaluate and improve a machine-generated first draft.&#34; And that&#39;s a different skill.  Arguably a harder one — because it requires you to catch errors in something that reads fluently and confidently.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the lawyers who get the most from AI aren&#39;t the ones most impressed by what it gets right.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> They&#39;re the ones who are clear-eyed about what it gets wrong. The right question is never &#34;is AI accurate?&#34; It&#39;s &#34;what&#39;s the cost if it&#39;s wrong, and what review process catches that?&#34; Match each task to its error mode, calibrate your review accordingly, and never confuse fluent output with correct output. Next time, we&#39;ll get into choosing the right tool for the job — evaluation criteria, red flags, and how to start small.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-06-episode-6-practical-security-hygiene-for-cloud-ai.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 6 — Practical Security Hygiene for Cloud AI</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

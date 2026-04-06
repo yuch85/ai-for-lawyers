@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 4 — The AI Ecosystem: Models, Tools, and How They Connect — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 4 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">The AI Ecosystem: Models, Tools, and How They Connect</h1>
+    <p class="text-ink-muted font-sans text-base">7:29 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-04-episode-4-the-ai-ecosystem-models-tools-and-how-they-connect.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>7:29</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-04-episode-4-the-ai-ecosystem-models-tools-and-how-they-connect.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">GPT, Claude, Gemini, Copilot, Harvey — what&#39;s what? Every AI tool is layers of software wrapped around a text-prediction engine. Understanding that separation helps you evaluate what you&#39;re paying for.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Text In, Text Out</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">A model at its core is just text in, text out — everything else is software engineering</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Major Models</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">GPT, Claude, Gemini, plus open-weights models from Meta and Mistral</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Wrapper Concept</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Nothing you interact with is the raw model — every product is a wrapper</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Inside a Simple Chat Interface</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Safety filters, system instructions, reinforcement tuning, content policies</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Complex Wrappers</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Copilot reads your document; Harvey adds legal databases and citation verification</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Evaluating AI Tools</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">What model is underneath, and what has the wrapper added? You pay for the wrapper</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Welcome back to AI for Lawyers. I&#39;m Tara, and I&#39;m here with my co-host Dan. Last time we talked about what these models can and can&#39;t do. Today we&#39;re pulling back further — looking at the whole ecosystem. GPT, Claude, Gemini, Copilot, Harvey — what&#39;s what, and how do they all fit together?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I hear these names thrown around constantly, and I think most lawyers use them interchangeably. Like, &#34;I asked the AI&#34; could mean any of ten different products. Or a combination of them.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> And that&#39;s the problem. Because they are very different things, even when they feel similar. So let me start with the most important concept in this entire episode. A large language model — at its core — is just text in, text out. That&#39;s it. You give it text, it gives you text back. Everything else you see when you use an AI tool? That&#39;s software engineering wrapped around that core function.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> okay, so the model itself is actually quite simple in concept?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Conceptually, yes. The engineering behind it is extraordinarily complex — we covered that in episode two. But from a user&#39;s perspective, the model is a text-prediction engine. It takes your input and generates the most probable continuation. Now, the major models you&#39;ll encounter are GPT from OpenAI, Claude from Anthropic, and Gemini from Google. Those are the three big commercial offerings.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Are there others?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> there are also open-weights models — released by companies like Meta and Mistral from the West and Chinese models from Alibaba and Moonshot — that anyone can download and run on their own hardware. These matter for firms exploring self-hosted solutions where data never leaves the building. But whether the model is open or proprietary, most lawyers will interact with the model through a commercially offered product built on top of them.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Built on top of them — what do you mean by that?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> This is the big idea. Nothing you interact with is the raw model. Every product is a wrapper around the model. And wrappers vary dramatically in what they add.  Think of it this way — you&#39;ve never talked to a raw model. You&#39;ve always talked to software that talks to the model on your behalf.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s an interesting way to put it. So even something as simple as ChatGPT — that&#39;s a wrapper?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Absolutely. And even a quote-unquote &#34;simple&#34; chat interface is surprisingly complex under the hood. Between your prompt and the raw model, there are multiple invisible layers. Safety filters that screen for harmful content. System instructions that shape the model&#39;s tone and behaviour. Reinforcement tuning that teaches it to be helpful rather than just completing text. Content policies that govern what the model will and won&#39;t do.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so when I type something into ChatGPT, it&#39;s not going straight to the model?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Not even close. You see a text box. Underneath that text box is a substantial piece of software engineering. Your input gets processed, augmented, filtered — and then it reaches the model. The model&#39;s output then goes through another set of filters before it reaches you. And here&#39;s the important implication — this is why the same underlying model can behave differently in different products. The wrapper is different.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So if I use GPT through ChatGPT versus through some other tool, I might get different responses even though it&#39;s the same model underneath?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. Different system instructions, different safety filters, different post-processing. and there&#39;s something else worth noting for lawyers specifically — the provider is actively processing your input through multiple layers before and after the model sees it. That&#39;s something to keep in mind when we talk about confidentiality and data security later in the series.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  That&#39;s a really important point. So my prompt doesn&#39;t just go to the model — it passes through the provider&#39;s infrastructure.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right. Now let&#39;s move up the complexity ladder. Using Copilot in Microsoft Word is a more complex wrapper. It reads your document, constructs a prompt behind the scenes, sends it to the model, and applies the result back into your document. You never see the prompt it actually sends to the model.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the AI isn&#39;t just responding to what I type — it&#39;s responding to a prompt that the software constructed from my document?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. The wrapper is doing significant work — deciding what context to include, how to frame the request, how to format the response back into your document. You&#39;re interacting with the wrapper, not the model. now go one step further. Legal-specific tools like Harvey add even more layers. Connections to legal databases. Citation verification. Specialised prompting logic. Workflow automation. Jurisdictional awareness. These are complex software products that happen to use an LLM as one component.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> it&#39;s wrappers all the way down?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span>  Exactly that. Each layer adds capability, but it also adds design decisions, limitations, and cost. And here&#39;s the key question when you&#39;re evaluating any AI tool — what model is underneath, and what has the wrapper added? Because you&#39;re paying for the wrapper, not the model.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That&#39;s a useful framework. So when a legal tech company says &#34;powered by GPT&#34; or &#34;built on Claude&#34; — that tells me what the engine is, but not what the car looks like.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Perfect analogy. the same engine in a family sedan and a racing car gives you a very different experience. The model is the engine. The wrapper is everything else — the steering, the suspension, the safety features, the navigation system. Two products using identical models can deliver completely different experiences because the wrapper is different.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And that&#39;s not a bug — that&#39;s the whole point?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s the whole point. The wrapper is where the value is. It&#39;s where the product decisions live. It&#39;s where the firm&#39;s specific needs get addressed — or don&#39;t. And let me close with an analogy that might resonate. The model is an engine. It generates power, but it doesn&#39;t know where to go. The wrapper is the entire car — steering, brakes, navigation, seatbelts. No one would strap themselves to a bare engine and call it transport. The wrapper isn&#39;t packaging. It&#39;s what makes the thing usable and safe.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  So the model is the brilliant but unsupervised associate, and the wrapper is the firm that makes them useful.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> that&#39;s exactly it. And the takeaway for every lawyer evaluating AI tools — every product you encounter is layers of software wrapped around a text-prediction engine. Understanding that separation helps you evaluate what you&#39;re actually paying for, why the same model behaves differently in different products, and why your data passes through more hands than you might assume. Next time, we&#39;ll dig into the practical risks — confidentiality, data security, and what happens to your information when you use these tools.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-03-episode-3-what-llms-can-and-can-t-do.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 3 — What LLMs Can and Can&#39;t Do</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+            <a href="../lessons/lesson-05-episode-5-confidentiality-privilege-and-data-security.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Next</p>
+                    <p class="text-lg font-semibold">Episode 5 — Confidentiality, Privilege, and Data Security</p>
+                </div>
+                <svg class="w-5 h-5 ml-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </a>
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

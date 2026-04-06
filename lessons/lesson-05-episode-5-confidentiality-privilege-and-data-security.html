@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 5 — Confidentiality, Privilege, and Data Security — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 5 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">Confidentiality, Privilege, and Data Security</h1>
+    <p class="text-ink-muted font-sans text-base">7:54 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-05-episode-5-confidentiality-privilege-and-data-security.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>7:54</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-05-episode-5-confidentiality-privilege-and-data-security.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">What happens to information you put into an AI tool — and can it cost you privilege? The Heppner ruling draws a bright line between consumer and enterprise AI tools.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Free vs Enterprise Tiers</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">The same model behind both — the difference is the contractual wrapper</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">United States v. Heppner</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">The first major ruling on AI and privilege — consumer tools are third parties</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Privilege Analysis</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Why consumer AI use fatally compromises confidentiality</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Kovel Doctrine Opening</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Counsel-directed AI use may be protected — but consumer freelancing is not</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Practical Implications</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Clients must be warned — AI chatbots are not private conversations</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Four-Question Framework</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">How to evaluate any AI tool for confidentiality and privilege risk</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Welcome back to AI for Lawyers. I&#39;m Tara.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And I&#39;m your co-host Dan.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Last episode we mapped the ecosystem — models, wrappers, and how they connect. Today we&#39;re getting into the issue that should keep every lawyer up at night. What happens to the information you put into an AI tool — and can it cost you privilege?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I think this is the episode that matters most for practising lawyers. Because the technology questions are interesting, but this one has real consequences.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It absolutely does. And let me start with the core concern. When you type something into an AI tool, where does that data go? This is not a hypothetical question. It has real legal consequences, and we now have case law to prove it. But before we get to the case, let&#39;s understand the landscape.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Okay, walk me through it.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> the most important distinction in this entire space is between free-tier and enterprise-tier tools. And I cannot overstate how critical this difference is. On the free or consumer tier — the kind most people use when they sign up for ChatGPT or Claude without a paid plan — the provider&#39;s terms of service typically permit data collection, retention, and use for model training. Your input may be reviewed by the provider&#39;s staff for safety and quality purposes. Some terms even permit disclosure to regulatory authorities.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  Wait — so when I type something into the free version, the company can actually read it?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Potentially, yes. Some companies like Anthropic allow you to opt out of model training but that&#39;s still not the same as enterprise-tier tools. These come with contractual commitments that your data won&#39;t be used for training. Stronger access controls. Data residency options — meaning your data stays in a specific jurisdiction. Audit rights. Zero data retention or ZDR. The legal protections are in the contract, not in a consumer terms of service that nobody reads.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and this isn&#39;t a technical distinction — it&#39;s a legal one?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. The same model can sit behind both tiers. The same GPT or the same Claude. The technical infrastructure might be nearly identical. The difference is the contractual wrapper around it. And that contractual wrapper is now, as of early this year, a privilege question.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> You&#39;re talking about the Heppner case.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> United States v. Heppner, Southern District of New York, February 2026. Judge Rakoff. this is the case that changed the conversation for every lawyer working with AI. Let me walk through the facts.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Please.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Heppner was a criminal defendant charged with securities fraud. After receiving a grand jury subpoena, he used the free consumer version of Claude to prepare defence strategy documents. He input information he&#39;d received from his lawyers — privileged communications — into the tool. He then shared the AI-generated documents with his counsel. The FBI subsequently seized his devices and found these documents.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I can already see where this is going.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span>  Judge Rakoff held that the documents were protected by neither attorney-client privilege nor the work product doctrine. On privilege — the communications were with an AI tool, not with an attorney. Heppner had disclosed the information to a third party, Anthropic, whose terms of service permitted data collection and disclosure. Confidentiality — the cornerstone of privilege — was fatally compromised the moment he typed it into the consumer tool.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And on work product?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Also denied. Heppner created the documents on his own initiative, not at his counsel&#39;s direction. The documents didn&#39;t reflect counsel&#39;s legal strategy or mental impressions. They reflected Heppner&#39;s own thinking, processed through a commercial AI tool. but here&#39;s the critical aside from the court — and this is the part every lawyer should underline.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> What did the court say?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Judge Rakoff noted the outcome might have been different if counsel had directed Heppner to use the AI tool. In that scenario, the tool might function as a lawyer&#39;s agent under the Kovel doctrine under US law — the same principle that protects communications with accountants or interpreters hired by counsel to assist with legal work. The distinction matters enormously. Counsel-directed use of AI, with proper confidentiality agreements in place, occupies fundamentally different legal ground than a client freelancing with a consumer chatbot.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  So the tool isn&#39;t inherently privileged or not privileged — it depends on how it&#39;s used and under whose direction.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. And that brings us to the practical implications. using a consumer AI tool to analyse privileged information is functionally the same as discussing your case with a stranger in a public place. The convenience of the tool doesn&#39;t change the privilege analysis. The speed doesn&#39;t change it. The quality of the output doesn&#39;t change it. You&#39;ve disclosed to a third party whose terms permit data use and disclosure. Privilege is gone.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> what about enterprise tools? Are those safe?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Enterprise tools with proper confidentiality agreements are in a fundamentally different position — the provider has contractually committed to not using your data, not training on it, and maintaining confidentiality. but I have to note — this hasn&#39;t been fully tested in court yet. Heppner drew a bright line around consumer tools. The enterprise side is still an open question, though the legal logic is much stronger when you have a proper confidentiality agreement in place.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And clients need to know this?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Urgently.  Many people — including sophisticated clients — treat AI chatbots as private conversations. They are not private. At least not on consumer tiers. Your clients need to be warned explicitly. If they&#39;re using AI tools to think through legal strategy, to analyse documents you&#39;ve given them, to draft communications about their case — they could be waiving privilege without realising it. And once privilege is waived, it&#39;s gone.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so what&#39;s the framework? How should a lawyer evaluate any AI tool from a confidentiality perspective?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Four questions. First — read the terms of service. Specifically the data use, data retention, and disclosure provisions. Second — does the provider contractually commit to not training on your data? Third — does the provider contractually commit to confidentiality equivalent to what you&#39;d expect from any professional service provider? And fourth — if the answers aren&#39;t clear, treat the tool as non-confidential. Full stop.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That&#39;s a clean framework.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> let me close with an analogy. Using a consumer AI tool with privileged information is like dictating your legal strategy into a speakerphone on a crowded train. The content might be brilliant. The analysis might be spot-on. But you&#39;ve just waived privilege because you chose the wrong medium for the conversation.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  That&#39;s a vivid image. So the takeaway is that the tool you choose is now a privilege question.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s exactly right. Heppner is the first major ruling at the intersection of AI and privilege, and it draws a bright line — consumer AI tools are third parties, and disclosure to them carries the same privilege consequences as disclosure to any other outsider. The tool you choose, and the contractual terms behind it, is now a privilege question, not just an IT question. Next time, we&#39;ll get practical — how to actually protect yourself and your clients when you&#39;re using these tools day to day. What to type, what never to type, and the one mistake most people don&#39;t even realise they&#39;re making.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-04-episode-4-the-ai-ecosystem-models-tools-and-how-they-connect.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 4 — The AI Ecosystem: Models, Tools, and How They Connect</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

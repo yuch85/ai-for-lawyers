@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 6 — Practical Security Hygiene for Cloud AI — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 6 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">Practical Security Hygiene for Cloud AI</h1>
+    <p class="text-ink-muted font-sans text-base">7:32 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-06-episode-6-practical-security-hygiene-for-cloud-ai.mp3" type="audio/mpeg">
+            </audio>
+            <div class="h-px bg-rule relative">
+                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
+                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>7:32</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-06-episode-6-practical-security-hygiene-for-cloud-ai.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">You understand the privilege risk — now what do you actually do? Sanitise before you prompt, watch for the inference problem, and never copy-paste from live documents without redacting.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Golden Rule</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Assume everything you type could be read, subpoenaed, or breached</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Never Input Directly</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">No names, dates, figures, personal data, or privileged communications</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Inference Problem</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">You don&#39;t need names to be identifiable — specific facts can narrow to one entity</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Copy-Paste Trap</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">The most common way sensitive data enters AI tools — redaction is the baseline</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">What You Can Safely Do</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">General questions, anonymised facts, sanitised clauses, generic drafting instructions</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Build the Habit</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Personal checklists, sanitisation templates, and defence in depth</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Welcome back to AI for Lawyers. I&#39;m Dan.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> And I&#39;m your co-host Tara. Last episode was the wake-up call — the Heppner ruling and what it means for privilege. Today is the practical follow-up. You understand the risk. Now — what do you actually do when you&#39;re sitting in front of these tools?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> because I think a lot of lawyers heard the last episode and thought, okay, I&#39;ll just use the enterprise version and I&#39;m fine. But it&#39;s not that simple, is it?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It&#39;s not. And let me start with the golden rule. Assume everything you type into a cloud AI tool could be read by a human at the provider, subpoenaed by a regulator, or surfaced in a data breach. Act accordingly. Even with enterprise tools and contractual protections — minimise what you expose. The safest information is information you never shared in the first place.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s a much more conservative posture than I think most people take.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It is. And it&#39;s the right one. So let&#39;s get specific. Rule number one — never input sensitive information directly. No client names. No party names. No deal names. No dates that identify specific transactions. No financial figures tied to identifiable entities. No privileged communications or legal strategy. And no personal data — national identification numbers, passport numbers, addresses, medical details. None of it goes in.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Okay, that list makes sense. But here&#39;s where I think it gets tricky — what about situations where you don&#39;t use a name but the facts are so specific that someone could figure it out?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> And that is the one people miss. this is probably the most important thing I&#39;ll say today. You don&#39;t have to type &#34;Client X&#34; for the model — or for anyone who later reads your prompt — to know who you&#39;re talking about. If your prompt says &#34;a Singapore-listed semiconductor company that recently received a takeover offer from a US private equity firm,&#34; there may be only one entity that fits that description.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  I hadn&#39;t thought about that. You could be completely anonymous in terms of names but still be identifiable from the facts.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. This is the inference problem. And here&#39;s the test — if a reasonably informed person reading your prompt could identify the client, the matter, or the parties, you&#39;ve put in too much. the solution is to sanitise aggressively. Change industries. Change geographies. Change numbers. Change party descriptions. Make the facts generic enough that they could describe dozens of situations, not just one.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that sounds like a lot of work. Is it really necessary every time?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Every time. And it gets easier with practice.  Think of it like redacting a document before producing it in discovery — you wouldn&#39;t hand over an unredacted document and hope nobody notices the sensitive parts. Same principle here. Now, let me address the most common way sensitive data actually enters an AI tool. It&#39;s not lawyers carefully typing out confidential information. It&#39;s copy and paste.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The copy-paste trap.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> a lawyer is working on a contract. They want the AI to improve a clause or suggest alternatives. So they highlight the paragraph, copy it, and paste it straight into the chat. That paragraph contains the party names, the deal value, the specific obligations — everything. It takes two seconds and it happens dozens of times a day across the profession.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  And once it&#39;s pasted, it&#39;s gone — it&#39;s in the provider&#39;s system.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right. So before you paste anything, ask yourself one question — does this contain any identifying information? If the answer is yes, strip it out first. Replace &#34;Acme Corporation&#34; with &#34;Company A.&#34; Replace &#34;forty-two million dollars&#34; with &#34;the purchase price.&#34; Replace Singapore with &#34;the relevant jurisdiction.&#34; Redaction is not optional. It&#39;s the baseline.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> what can you safely do? Because if I have to sanitise everything, it sounds like AI becomes almost unusable.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Not at all. There&#39;s a lot you can do safely. you can ask general legal questions — &#34;what are the typical representations and warranties in a share purchase agreement?&#34; That&#39;s textbook knowledge. You can provide fully anonymised fact patterns. You can paste sanitised contract clauses with all identifying details removed - there are tools for automated redaction of Personally Identifiable Information - also known as PII. You can ask the model to draft from scratch based on generic instructions. And you can use the model as a thinking partner for structure and approach without revealing the specifics of your matter.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So the model is still useful — you just need to be disciplined about what you feed it.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Exactly. And here&#39;s my practical recommendation — build the habit before you need it. Create a personal checklist. Before hitting send on any prompt, scan for names, numbers, dates, and identifiers. Some lawyers keep what they call a sanitisation template — a standard set of placeholder names and facts that they swap in before prompting. &#34;Company A&#34; and &#34;Company B&#34; instead of the real parties. &#34;Country X&#34; instead of the actual jurisdiction. Round numbers instead of specific figures. And if you want to go further, there are more sophisticated PII tools that let you round-trip the information — sanitise on the way in, desanitise on the way out.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and if your firm has an enterprise tool with contractual protections, the rules are more relaxed?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> They may be — depending on the specific contractual terms. But even then, the habit of minimising exposure is good practice. Contracts can be breached. Providers can be hacked. Regulators can compel disclosure.  The contractual protections add a layer of safety, but they don&#39;t make the underlying information invulnerable. Defence in depth — that&#39;s the principle.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So you treat the contract as one layer of protection, not the only layer.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Precisely. And let me close with an analogy. You wouldn&#39;t leave a client&#39;s confidential documents on a café table while you go to the bathroom, even if the café has CCTV. The security camera exists, but you still don&#39;t expose what you don&#39;t need to expose. Same logic applies to AI tools. The contractual protections exist, but you still sanitise. You still minimise. You still think before you paste.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  Don&#39;t leave your documents on the table. I&#39;ll remember that one.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> the takeaway is this — sanitise before you prompt, every single time. And remember that sensitive information isn&#39;t just names and numbers. It&#39;s anything from which someone could work backwards to identify the client or the matter. The inference problem is real, and the copy-paste trap catches more lawyers than any other vector. Build the habit now. Next time, we&#39;ll look at what lawyers are actually using AI for today — and more importantly, the framework for deciding which tasks are safe to hand to AI and which ones aren&#39;t.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-05-episode-5-confidentiality-privilege-and-data-security.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 5 — Confidentiality, Privilege, and Data Security</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const timeEl = document.getElementById('current-time');
+    audio.addEventListener('timeupdate', function() {
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+</script>
+
+</body>
+</html>

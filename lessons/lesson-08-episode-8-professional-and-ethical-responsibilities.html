@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 8 — Professional and Ethical Responsibilities — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+        
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 8 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">Professional and Ethical Responsibilities</h1>
+    <p class="text-ink-muted font-sans text-base">8:35 &middot; AI for Lawyers</p>
+</div>
+
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg id="icon-play" class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-pause" class="w-6 h-6 text-ink group-hover:text-paper hidden" fill="currentColor" viewBox="0 0 20 20"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-08-episode-8-professional-and-ethical-responsibilities.mp3" type="audio/mpeg">
+            </audio>
+            <div id="progress-bar" class="h-3 bg-rule relative cursor-pointer" style="margin-top:-6px;padding-top:6px;padding-bottom:6px;">
+                <div class="h-px bg-rule relative">
+                    <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red"></div>
+                    <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red"></div>
+                </div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>8:35</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-08-episode-8-professional-and-ethical-responsibilities.mp3" download class="inline-flex items-center text-base font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">What are your duties when AI is part of your workflow? We cover the fluency trap, the emerging competence question, calibrating oversight to risk, bias, disclosure, and the training paradox for junior lawyers.</p>
+</div>
+
+<!-- Chapter Sections (Storytelling) -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+        
+        
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Your Name, Your Responsibility</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">The fluency trap — polished AI output demands stronger review, not weaker</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Competence Question</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Not using AI may become a competence issue — but so is using it without understanding its failures</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Calibrating Oversight</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Human-in-the-loop for high stakes, human-on-the-loop for low risk</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Bias and Verification</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">Bias is as serious as hallucination — and verification is non-negotiable</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">V.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Disclosure</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">When to tell clients, courts, and counterparties that AI was involved</p>
+                
+            </div>
+        </div>
+        
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">VI.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">The Training Paradox</h3>
+                
+                <p class="text-lg text-ink-light leading-relaxed">If AI takes over foundational tasks, how do juniors develop expertise?</p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<!-- Transcript Toggle -->
+
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> This is AI for Lawyers. I&#39;m Tara, alongside Dan. Last episode was about what can go wrong — hallucination, omission, mischaracterisation, anchoring. Today we&#39;re flipping the lens.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> from what the AI gets wrong... to what&#39;s expected of you when it does?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> That&#39;s right. What are your duties as a lawyer when AI is part of your workflow?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I think this is the episode that really brings it home. Because everything else is about capability — this one is about responsibility.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> And let&#39;s start with the principle that hasn&#39;t changed. You are responsible for your work product. Full stop. Whether you drafted it yourself, a junior drafted it, or an AI generated it — your name is on it... and you own it.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Same as it&#39;s always been.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Same as it&#39;s always been. here&#39;s what has changed — the fluency trap. AI output reads well. It sounds confident. And that makes it psychologically harder to scrutinise than a rough draft from a junior, where the gaps are obvious.  The review discipline has to be stronger with AI, not weaker.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so the better the tool sounds, the more careful you need to be.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Yup. And there&#39;s a broader competence question emerging. there is a serious argument — already being made by senior practitioners — that it may soon be a failure of competence not to use AI for certain tasks. Studies have shown legal AI tools outperforming lawyers on document summarisation, transcript analysis, and data extraction.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so not using AI could become a competence issue?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It cuts both ways. Competence also means knowing when not to rely on AI, understanding its failure modes, and having the skill to catch its errors. AI literacy for a lawyer isn&#39;t just knowing how to use the tool. It means understanding how the tools work and where they break down. Recognising which tasks AI handles reliably and which it doesn&#39;t. Knowing basic prompting techniques that reduce hallucination. And knowing when additional scrutiny should be applied.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and there&#39;s an expertise gap that makes this worse, right?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Absolutely. When you use AI for work outside your core practice area, the fluency trap is even more dangerous. you&#39;re less equipped to spot errors in the substance. ... If you&#39;re a corporate lawyer reviewing an AI-generated employment law analysis, you may not catch a subtle misstatement that a specialist would flag immediately. The review burden is proportionally higher when you&#39;re outside your expertise — and that&#39;s precisely when AI output feels most helpful.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> how do you calibrate the level of review? Because not everything needs the same scrutiny.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Right... start by asking — is this output for internal use or external use? For internal outputs, ask whether they have legal implications. For external outputs, ask whether the task involves legal, reputational, or financial consequences, or will be subject to scrutiny by courts, regulators, or clients.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> so it&#39;s a spectrum.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> exactly. Low risk — administrative tasks, meeting notes, brainstorming summaries. Medium risk — routine client updates, standard document review. High risk — court submissions, regulatory filings, commercial contracts, legal advice. And you match your oversight to that spectrum.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> what does oversight actually look like in practice?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Two levels. First — human-in-the-loop. The lawyer actively reviews and approves before the AI output is finalised or acted upon. You make the final call. Use this for anything requiring legal judgment, which is most substantive legal work. ... Second — human-on-the-loop. You oversee and monitor but don&#39;t intervene in every output. Supervisory checks, structured sampling, escalation when something looks off. This works for lower-risk tasks where outputs are easily reversible.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and how do you know if you&#39;re doing enough?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> Here&#39;s the self-check I keep coming back to. Can you explain how this output was verified, if asked? If the answer is no — increase your level of oversight. now let me raise something that gets far less attention than hallucination but matters just as much — bias.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> bias in AI output?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> AI models reflect prejudices baked into their training data — including case law that disproportionately disadvantages certain groups, or datasets that underrepresent particular jurisdictions. For lawyers, this matters in client profiling, risk assessment, litigation outcome prediction — any task where the AI is making evaluative judgments rather than just drafting.  The obligation to check for bias is part of your professional oversight responsibility, not an optional extra.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That&#39;s sobering... and verification — we&#39;ve talked about this before, but it bears repeating?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> It&#39;s non-negotiable.  If you cite a case the AI fabricated, it is your professional responsibility, not the AI&#39;s. The standard is simple... do not rely on an authority you have not read.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> What about disclosure? Do you have to tell people you used AI?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> this is an evolving area. Some courts and firms are beginning to require disclosure. It&#39;s not yet universal, but the direction of travel is clear. The safe position — if in doubt, disclose. Three situations where disclosure is particularly warranted. First, when AI is used substantially in producing work product that the client or counterparty will rely on. Second, when AI impacts the cost of legal services — if you&#39;re incorporating AI tool costs into client fees, it&#39;s reasonable to agree on the approach with the client.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> the third?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> When the data handling practices of the AI tools you&#39;re using may conflict with a client&#39;s specific preferences or data residency requirements. clients should be given the option to opt out of AI being used on their matters. If they do, be transparent about the trade-offs — certain efficiencies won&#39;t be available, turnaround may be slower. The point is informed consent.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span>  That&#39;s interesting — giving clients the choice rather than just deciding for them. now there&#39;s something I&#39;ve been thinking about. If AI takes over first-pass drafting and document review — how do junior lawyers actually learn?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> The training paradox.  And it&#39;s a real one. Junior lawyers traditionally developed skills through repeated performance of exactly the tasks AI is now taking over — document review, research, first-pass drafting. If juniors no longer do this work manually, how do they develop the expertise to evaluate whether the AI did it correctly?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> that&#39;s not an argument against AI though, is it?</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> No. It&#39;s an argument for being intentional about training. the goal isn&#39;t just teaching juniors how to use AI tools — it&#39;s developing them holistically into competent legal professionals. Cultivating the ability to assess, challenge, and refine AI output so that AI strengthens their development rather than replacing it. The premium shifts toward human skills — critical thinking, persuasion, client relationships, judgment under uncertainty.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> and seniors have a role here too.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Tara:</span> A crucial one. Seniors who supervise AI-assisted work need to understand what the tool can and cannot do.  Supervising AI-assisted work is arguably harder than supervising purely human work, because the output is more polished and the errors are more subtle. ... So here&#39;s the takeaway. Your ethical duties haven&#39;t been rewritten by AI — but the context in which you apply them has changed fundamentally. Competence now means knowing how to use these tools and knowing how to catch their mistakes. Match your level of oversight to the stakes, watch for bias as well as hallucination, and remember that disclosure and transparency are fast becoming the professional norm, not the exception.</p>
+        
+        
+        
+        
+        
+        
+        
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That&#39;s a lot to take in. Thanks for listening, everyone — we&#39;ll see you next time. ... The hosts on this podcast are AI-generated voices. Content is designed by a practising lawyer but is for educational purposes only — not legal advice.</p>
+        
+        
+        
+    </article>
+</section>
+
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            
+            <a href="../lessons/lesson-07-episode-7-what-lawyers-should-use-ai-for-and-what-can-go-wrong.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 7 — What Lawyers Should Use AI For (And What Can Go Wrong)</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="text-right">
+            
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+    
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const bar = document.getElementById('progress-bar');
+    const timeEl = document.getElementById('current-time');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+
+    // Toggle play/pause icons
+    audio.addEventListener('play', function() {
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+    });
+    audio.addEventListener('pause', function() {
+        iconPause.classList.add('hidden');
+        iconPlay.classList.remove('hidden');
+    });
+
+    // Progress update
+    audio.addEventListener('timeupdate', function() {
+        if (dragging) return;
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+
+    // Seek on click/drag
+    let dragging = false;
+    function seek(e) {
+        const rect = bar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        fill.style.width = (pct * 100) + '%';
+        dot.style.left = (pct * 100) + '%';
+        audio.currentTime = pct * audio.duration;
+    }
+    bar.addEventListener('mousedown', function(e) { dragging = true; seek(e); });
+    document.addEventListener('mousemove', function(e) { if (dragging) seek(e); });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    bar.addEventListener('touchstart', function(e) { dragging = true; seek(e.touches[0]); }, {passive: true});
+    document.addEventListener('touchmove', function(e) { if (dragging) seek(e.touches[0]); });
+    document.addEventListener('touchend', function() { dragging = false; });
+</script>
+
+</body>
+</html>

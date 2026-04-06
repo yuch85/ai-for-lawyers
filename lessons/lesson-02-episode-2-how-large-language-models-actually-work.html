@@ -33,15 +33,18 @@
 <div class="py-8 border-b border-rule">
     <div class="flex items-center gap-6">
         <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
-            <svg class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-play" class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-pause" class="w-6 h-6 text-ink group-hover:text-paper hidden" fill="currentColor" viewBox="0 0 20 20"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
         </button>
         <div class="flex-1">
             <audio id="player">
                 <source src="../audio/lesson-02-episode-2-how-large-language-models-actually-work.mp3" type="audio/mpeg">
             </audio>
-            <div class="h-px bg-rule relative">
-                <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red transition-all"></div>
-                <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red transition-all"></div>
+            <div id="progress-bar" class="h-3 bg-rule relative cursor-pointer" style="margin-top:-6px;padding-top:6px;padding-bottom:6px;">
+                <div class="h-px bg-rule relative">
+                    <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red"></div>
+                    <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red"></div>
+                </div>
             </div>
             <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
                 <span id="current-time">0:00</span>
@@ -391,8 +394,24 @@
     const audio = document.getElementById('player');
     const fill = document.getElementById('progress-fill');
     const dot = document.getElementById('progress-dot');
+    const bar = document.getElementById('progress-bar');
     const timeEl = document.getElementById('current-time');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+
+    // Toggle play/pause icons
+    audio.addEventListener('play', function() {
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+    });
+    audio.addEventListener('pause', function() {
+        iconPause.classList.add('hidden');
+        iconPlay.classList.remove('hidden');
+    });
+
+    // Progress update
     audio.addEventListener('timeupdate', function() {
+        if (dragging) return;
         const pct = (audio.currentTime / audio.duration * 100) || 0;
         fill.style.width = pct + '%';
         dot.style.left = pct + '%';
@@ -400,6 +419,22 @@
         const s = Math.floor(audio.currentTime % 60);
         timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
     });
+
+    // Seek on click/drag
+    let dragging = false;
+    function seek(e) {
+        const rect = bar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        fill.style.width = (pct * 100) + '%';
+        dot.style.left = (pct * 100) + '%';
+        audio.currentTime = pct * audio.duration;
+    }
+    bar.addEventListener('mousedown', function(e) { dragging = true; seek(e); });
+    document.addEventListener('mousemove', function(e) { if (dragging) seek(e); });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    bar.addEventListener('touchstart', function(e) { dragging = true; seek(e.touches[0]); }, {passive: true});
+    document.addEventListener('touchmove', function(e) { if (dragging) seek(e.touches[0]); });
+    document.addEventListener('touchend', function() { dragging = false; });
 </script>
 
 </body>

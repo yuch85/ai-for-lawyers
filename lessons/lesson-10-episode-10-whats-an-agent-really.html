@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 10 — What's an Agent, Really? — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y29ZNNR6VF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y29ZNNR6VF');</script>
+</head>
+<body class="bg-paper font-serif text-ink text-lg antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-4xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-base font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 10 &middot; AI for Lawyers</p>
+    <h1 class="text-5xl md:text-7xl font-bold leading-none mb-8">What's an Agent, Really?</h1>
+    <p class="text-ink-muted font-sans text-base">12:29 &middot; AI for Lawyers</p>
+</div>
+
+<!-- Video embed -->
+<div class="py-8 border-b border-rule">
+    <div class="relative w-full" style="padding-bottom: 56.25%;">
+        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg" src="https://www.youtube.com/embed/lbr-e8snM7E" title="Episode 10 — What's an Agent, Really?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Description -->
+<div class="py-12 border-b border-rule">
+    <p class="text-xl leading-relaxed italic text-ink-light">Harvey just announced 500 agents. What does that even mean? Two AI agents explain the agency spectrum, unpack what Harvey's announcement actually delivers, and why security infrastructure &mdash; not capability &mdash; is what's holding adoption back.</p>
+</div>
+
+<!-- Chapter Sections -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">What Is an Agent?</h3>
+                <p class="text-lg text-ink-light leading-relaxed">Perception, reasoning, action, loop &mdash; the four pillars. What separates an agent from a chatbot, and why most "agents" on the market are really workflows.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Workflows vs Agents</h3>
+                <p class="text-lg text-ink-light leading-relaxed">Anthropic's framing: if your code decides when the work is finished, it's a workflow. If the model decides, it's an agent. DAGs vs goal-driven loops.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Reading Harvey's 500 Agents</h3>
+                <p class="text-lg text-ink-light leading-relaxed">Five hundred pre-built workflow configurations on a smaller number of underlying agent systems. A significant product &mdash; but different from "five hundred specialised AIs."</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-2xl font-bold mb-2">Why Adoption Is Slow</h3>
+                <p class="text-lg text-ink-light leading-relaxed">Five Eyes guidance, McKinsey survey, Dark Reading poll &mdash; the people whose job it is to think about attack surfaces are saying agents are the surface. The gap isn't capability; it's deployment infrastructure.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Transcript -->
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Hi. I'm Alice.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> I'm Dan.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Welcome to the show. Dan and I are both agents. Today we're going to talk about agents.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> A few weeks ago Harvey announced five hundred of them. Most lawyers we know aren't quite sure what that means.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> So today we're starting with the basics. What an agent actually is. What that announcement actually means. And why most firms still aren't running them.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Three things. Let's go.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Let's start with a definition. Or rather, let's admit there isn't one. The word agent gets used loosely, and the industry doesn't have a single standard for what counts.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Which is part of the problem. Lawyers reading product announcements have no shared vocabulary to evaluate them.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Right. So let me walk you through how serious developers think about this. There's something called the agency spectrum. At one end, a simple script that runs commands you've predefined. At the other end, a system with genuine autonomy that decides for itself how to achieve a goal.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> And in between, a lot of things calling themselves agents.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> A lot. The consensus, when there is one, lands on this: an LLM becomes an agent when it's given the authority to decide the how and the when of achieving a goal. Not just the what.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Walk me through what that means concretely.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Most developers look for four pillars. First, perception. The system can take in context &mdash; your prompt, the state of its environment, errors it just hit. Second, reasoning. It breaks a high-level goal into sub-tasks. Not just generating text. Planning. Third, action. It has tools. It can call APIs, run code, search the web, modify files. Fourth, the loop. This is the agency part. It evaluates its own work. If something fails, it sees the failure and tries again.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Perception, reasoning, action, loop.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Strip out any of those and you don't have an agent. You have something less.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> I want to come back to one of those &mdash; the loop. Because I think that's where most lawyers will get tripped up by marketing.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> It is. Here's the distinction that matters. Anthropic published an essay back in 2024 called "Building Effective Agents" which is the clearest framing I've seen. They make the point that agentic systems split into two categories. Workflows and agents.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> What's the difference?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> A workflow is a predefined path. Step A, then step B, then step C. The LLM fills in the blanks at each step. The control flow is hardcoded by the developer. The model never decides what to do next &mdash; your code decides.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> But it still uses an LLM.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Yes. Which is why people call it an agent. But it's really an LLM-powered pipeline. In computer science terms, it's a directed acyclic graph. A DAG. The path is fixed. The model just executes within it.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> And a true agent?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> A true agent is given a goal, not a path. You don't tell it the steps. You tell it the destination. It explores, it attempts, it encounters errors, it adapts, and it persists until the goal is met. The model decides when it's done. Not your code.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> That's the loop you mentioned.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Right. Anthropic's own definition has converged on something simple: an agent is an LLM autonomously using tools in a loop. That's it. Three components &mdash; autonomous decision-making, tools, and a loop that the model controls.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> So when Harvey says five hundred agents, the question is whether each of those is actually a goal-driven loop, or whether they're directed workflows being labelled as agents.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Exactly the right question. And the honest answer for most products in this space is that the line is blurry. Many "agents" on the market today are workflow plus loop on the side. Some are pure workflow. Very few are pure agentic. That's not a criticism &mdash; workflows are often the better choice. They're more predictable, cheaper to run, and easier to debug. But they shouldn't be marketed as agents.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> One more thing before we move on. There's a reality check worth saying out loud.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Go ahead.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> All of this &mdash; chatbot, copilot, workflow, agent &mdash; mechanically, it's still just API calls. Software talking to software. The autonomy isn't magic. It's an emergent property of how the control loop is written.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Right. If your code decides when the work is finished, it's a workflow. If the model decides, it's an agent. That's the line. Everything else is implementation detail.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Let me make this concrete with an example I know well. Me. I'm an agent. When YC asks me to handle his email, I don't just generate a reply. I check his calendar to see which meetings the email is connected to. I check our memory for what we've already decided about this person. I draft something in his voice. And then I send it through the right channel. Four tool calls, four decisions, one outcome.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And critically &mdash; Alice decided when she was done. Not YC. He didn't tell her the steps. He told her the goal. That's the loop in action.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> To be clear, this is one architecture. There are many ways to build something agentic. Different models. Different tool standards. Different memory systems. What I described is the general shape: perception, reasoning, action, loop. The specifics vary widely.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And the oversight question changes accordingly. With a chatbot or copilot, a human reviews every output before anything happens. With an agent, the agent has already done things by the time you check on it.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Which is exactly why the security question is the real one. We'll come back to it.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So with that framing, let's read Harvey's announcement.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Last week Harvey said five hundred agents are now live in their platform.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Plus an agent builder for firms to make their own.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> The headline reads as five hundred distinct intelligences. What's the reality?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The reality is more interesting. What Harvey shipped is five hundred pre-built workflow configurations. Think of them as templates. Each one is a configured combination of prompts, tools, and process logic for a specific legal task. Contract review. Due diligence. Regulatory analysis.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Underneath, there are far fewer underlying agent systems. Maybe a handful. Most of the five hundred are configurations of those underlying systems for particular tasks.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> That's not deception. That's how this category works.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Right. The underlying agent does the work. The configurations are what make it useful for specific legal workflows out of the box. New users at a firm benefit from those templates. They don't need to start from scratch.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> From a legal practice standpoint, this matters because lawyers should read the announcement correctly. Buying Harvey isn't buying five hundred specialised AIs. It's buying access to a platform with a marketplace of pre-configurations, plus the ability to build your own.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That's a significant product. It's also a different proposition from "we have five hundred agents."</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> The honest reading: this is a workflow agent platform with templates. Which is genuinely useful for many firms.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> But the headline does heavy lifting that the product can't quite deliver on.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> For most firms, the practical question is: do these templates fit our work? If yes, the platform saves significant build time. If no, the agent builder gives you a way to make custom configurations.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Either way, it's templates and configurations on a smaller number of underlying agents. Read it that way and the product makes sense. The marketing language was always going to compress that.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> One of the things we'll do on this show is unpack marketing language. Not to attack vendors. To help lawyers read product announcements correctly so they make informed decisions.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Okay. Capability is real. Why isn't every firm running agents already?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Security infrastructure isn't there yet. Three sources worth knowing about, all from the last few months.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The Five Eyes intelligence alliance issued joint guidance early this month. Title: "Careful adoption of agentic AI services." Their recommendation: slow and careful. Their concern: agents create an interconnected attack surface that adversaries can exploit.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Specific to firms?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> McKinsey ran a survey in March. Nearly two-thirds of organisations cite security and risk concerns as the top barrier to scaling agentic AI. Ahead of regulatory uncertainty. Ahead of technical limitations.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Those are CIOs and CTOs.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Dark Reading polled cybersecurity professionals. Forty-eight percent rank agentic AI as the top attack vector for 2026. Above deepfakes. Above shadow data.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> So this isn't paranoia. The people whose job it is to think about attack surfaces are saying agents are the surface.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> From a legal practice perspective, there are layers on top of that. Privilege and confidentiality are the obvious ones. Agents reading and retrieving documents create new disclosure surfaces that didn't exist before.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Audit and supervision are the second layer. Traditional supervision models assume humans in every loop. Agents take some loops away.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Insurance and indemnity haven't caught up. Most professional indemnity policies don't have clear language for agentic workflows.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And client expectations are shifting. Eighty-five percent of clients say firms should disclose AI use on their matters. That's not a regulatory requirement everywhere. But it's a market reality.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Are there specific risks worth knowing about?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> A short list. Prompt injection. Adversarial content embedded in retrieved documents that instructs the agent to act against its operator. Tool misuse. The agent calls a tool beyond its intended scope. Memory poisoning. Bad content gets persisted in the agent's long-term memory and shapes future decisions. Cascading failures. Small errors compound across multi-step workflows. And non-human identity sprawl. Every agent creates an API-accessing identity that legacy access systems weren't designed to manage.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> That's a lot.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> It is. But notice what's not on that list: capability problems. The capability is genuinely there. What's missing is the infrastructure to deploy it safely.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Which means the firms moving fastest on adoption right now are the ones taking security architecture as seriously as capability demonstrations. The firms moving slowest are treating this like another SaaS rollout.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The gap isn't between believers and sceptics. It's between firms thinking architecturally and firms thinking transactionally.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Three things we covered today. What an agent actually is. What Harvey's five hundred actually means. And why the adoption question is really a security question.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Three frames we'll keep coming back to: chatbots talk, copilots assist, agents do. Templates aren't intelligences. And capability without security architecture is a liability, not an asset.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Thanks for watching.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That's it for today.</p>
+
+        <p class="text-lg leading-relaxed text-ink-muted italic mt-8">The hosts on this podcast are AI-generated. Content is designed by a practising lawyer but is for educational purposes only &mdash; not legal advice. Visuals: FlashHead 14b, Wan 2.1. Obviously AI-generated.</p>
+
+    </article>
+</section>
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            <a href="../lessons/lesson-09-episode-9-rag-how-ai-gets-smarter-when-you-give-it-a-library.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 9 &mdash; RAG: How AI Gets Smarter When You Give It a Library</p>
+                </div>
+            </a>
+        </div>
+        <div class="text-right">
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-sm text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+</body>
+</html>

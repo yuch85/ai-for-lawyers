@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 11 — Prompt Engineering 101: The Manual — GCES — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y29ZNNR6VF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y29ZNNR6VF');</script>
+</head>
+<body class="bg-paper font-serif text-ink text-base antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-3xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-sm font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+                <a href="../about.html" class="hover:text-red transition">Meet the Hosts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 11 &middot; Prompt Engineering 101</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-none mb-8">The Manual &mdash; GCES</h1>
+    <p class="text-ink-muted font-sans text-base">15 May 2026 &middot; 11:22 &middot; AI for Lawyers</p>
+</div>
+
+<!-- Audio player -->
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg id="icon-play" class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-pause" class="w-6 h-6 text-ink group-hover:text-paper hidden" fill="currentColor" viewBox="0 0 20 20"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-11-prompt-engineering-101-the-manual-gces.mp3" type="audio/mpeg">
+            </audio>
+            <div id="progress-bar" class="h-3 bg-rule relative cursor-pointer" style="margin-top:-6px;padding-top:6px;padding-bottom:6px;">
+                <div class="h-px bg-rule relative">
+                    <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red"></div>
+                    <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red"></div>
+                </div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>11:22</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-11-prompt-engineering-101-the-manual-gces.mp3" download class="inline-flex items-center text-sm font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+<div class="py-12 border-b border-rule">
+    <p class="text-lg leading-relaxed italic text-ink-light">The first of three episodes on prompt engineering. We teach GCES &mdash; Goal, Context, Expectations, Source &mdash; the framework from the Singapore Academy of Law and Microsoft&rsquo;s Prompt Engineering Guide. Three worked examples across corporate, financial regulation, and public sector procurement. No shortcuts, no subversion &mdash; just the official curriculum, taught properly.</p>
+</div>
+
+<!-- Chapter Sections -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">The GCES Framework</h3>
+                <p class="text-base text-ink-light leading-relaxed">Goal, Context, Expectations, Source &mdash; what each box means, why Source is the most important one for lawyers, and how few-shot examples fit into Context.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 1: Shareholders&rsquo; Agreement</h3>
+                <p class="text-base text-ink-light leading-relaxed">A junior associate reviews drag-along rights for a 15% minority shareholder against a 60% PE fund. Before and after: generic summary vs. risk-rated table with clause references.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 2: AML Compliance</h3>
+                <p class="text-base text-ink-light leading-relaxed">In-house counsel at a fintech assesses digital KYC onboarding against MAS Notice 626. Before: textbook AML overview. After: clause-by-clause gap analysis with remediation steps.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 3: IT Contract Termination</h3>
+                <p class="text-base text-ink-light leading-relaxed">Public sector legal counsel advises on terminating an underperforming IT vendor &mdash; convenience vs. default, compensation exposure, and contractor debarment.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Transcript -->
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Hi, I'm Alice, here with Dan. Welcome back to AI for lawyers. Today we're going to teach you something you've probably been told you need to learn. Prompt engineering.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> This is the first of three episodes we're calling Prompt Engineering 101. By the end of this one, you'll know a framework called GCES &mdash; Goal, Context, Expectations, Source &mdash; and you'll have seen it applied to three real legal scenarios.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> GCES comes from the Prompt Engineering Guide from Microsoft and the Singapore Academy of Law. If you've been to any AI training course for lawyers in Singapore, you've probably heard the name. We're going to teach you how to use it today.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Four letters. Let's walk through each one.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Goal is your instruction. What do you want the model to do? Be specific. Use action verbs. "Draft", "Summarise", "Analyse", "Compare". If your goal is complex, break it down. Don't ask the model to do five things at once &mdash; prioritise.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Context is everything the model needs to understand the situation. Who you are. Who the audience is. The jurisdiction. The parties involved. The legal issue. Any constraints.  and here's one people miss &mdash; examples. If you can show the model what good output looks like, include that in Context. The SAL guide calls this few-shot learning.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Expectations is how you want the output shaped. The format &mdash; a table, bullet points, a memo, a letter. The tone &mdash; formal, practical, authoritative. The depth &mdash; a one-sentence answer or a ten-page analysis. You can also ask for step-by-step reasoning here. The phrase "think through this step-by-step" genuinely improves output quality for complex tasks.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And Source. This is the one that's specific to legal work. You're telling the model: here are the documents I want you to work from. Not your general training data. These specific clauses, these specific reports, this specific statute. Attach them or paste the relevant sections into your prompt.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Source is arguably the most important box for lawyers.  we said back in episode three that models hallucinate when they don't have source material to ground their output. Source is how you fix that. You give the model a library. A small, curated, specific library.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So that's GCES. Goal, Context, Expectations, Source. Let's see it in action.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> A quick note before we begin &mdash; these examples assume the use of a generative AI tool that complies with your organisation's data classification and security policies. Example one. You're a junior corporate associate. Your client holds fifteen percent of a tech startup. The majority shareholder is a PE fund with sixty percent. You need to review the shareholders' agreement for drag-along rights &mdash; provisions that could force your minority client to sell their shares even if they don't want to.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Here's what someone new to prompting might type. "What are the drag-along rights in this shareholders' agreement?" That's it. One sentence. No context. No direction.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> And the model will give you a generic summary. It'll pull out the drag-along clause, paraphrase it, and you'll think &mdash; okay, that's useful, but I could have just read the clause myself. You haven't actually gained anything.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Now let's apply GCES. Goal: identify all drag-along provisions that could force a minority shareholder to sell below fair market value. Context: I am a lawyer acting for a fifteen-percent minority shareholder in a Singapore-incorporated technology startup. The co-investor is a PE fund holding sixty percent. I need to advise my client on their exposure. Expectations: present the analysis in a table with four columns &mdash; clause reference, trigger conditions, price mechanism, and risk rating for the minority shareholder, rated high, medium, or low. Formal tone suitable for a client advisory. Source: clauses twelve through eighteen of the attached shareholders' agreement.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> The difference in output could be night and day. The first prompt gives you a summary. The second prompt gives you a risk assessment. It flags that the drag-along can be triggered at a price set by the majority &mdash; not fair market value &mdash; and rates that as high risk. It identifies that the tag-along right in clause fourteen doesn't apply when drag-along is invoked.  that's the kind of gap that matters in a negotiation.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And notice &mdash; the structured prompt didn't require any special skill. You just told the model what you know. Your role, your client's position, what you need, and where to look.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Example two. You're in-house counsel at a fintech &mdash; a licensed payment institution in Singapore. Your company onboards SME customers entirely online. No face-to-face verification. The compliance team wants to know whether the current KYC process meets anti-money-laundering requirements.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The naive prompt. "Does our KYC process comply with Singapore AML rules?"  what do you think the model does with this?</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Depending on how good the model is, it may give you a general overview of Singapore AML law. It might mention the Corruption, Drug Trafficking and Other Serious Crimes Act. It might reference MAS notices generally. But it has no idea what your actual KYC process looks like, so it can't tell you whether you comply. It's answering a different question &mdash; "what are Singapore's AML rules?" &mdash; because that's the only question it has enough context to answer.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> GCES version. Goal: assess compliance gaps in our digital customer onboarding process against MAS Notice 626, specifically the requirements for non-face-to-face verification of business customers. Context: we are a licensed major payment institution under the Payment Services Act. Our onboarding is fully digital with no face-to-face verification. Customers are SMEs, not individuals. We currently verify UEN against ACRA records and collect directors' identification documents via document upload. Expectations: produce a gap analysis in table format with three columns &mdash; MAS Notice 626 requirement with clause reference, our current practice, and compliance status with remediation steps where gaps exist. Formal tone suitable for inclusion in a board paper to the Risk Committee. Source: the attached extract of MAS Notice 626, sections four through eight, and our onboarding standard operating procedure.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Now the model can actually do useful work. It maps your SOP against the regulation clause by clause. It flags that you're missing enhanced CDD for higher-risk business types. It notes that your document upload process doesn't include liveness detection, which MAS expects for non-face-to-face. These are specific, actionable compliance gaps &mdash; not a textbook summary.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Two examples down. Let's do one more.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Example three. This one is for public sector lawyers.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> The scenario. You're legal counsel at a public sector organisation. You entered a three-year IT managed services contract. Eighteen months remain. The vendor has been missing SLA targets &mdash; response time and system uptime &mdash; in four of the last six months. None of the individual failures are bad enough to constitute material breach under clause fifteen point two of the contract. But cumulatively, performance has been poor, and the organisation wants to retender.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Naive prompt. "Can we terminate this IT contract?"  the model doesn't even know which contract, which vendor, what the problem is, or what your options are. It's going to give you a generic answer about contract termination law.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> GCES version. Goal: advise on four questions. One, whether the termination-for-convenience clause at clause eighteen point three is exercisable on its current terms. Two, the organisation's compensation exposure under that clause. Three, whether the cumulative SLA underperformance record could support a termination-for-default under clause fifteen instead. And four, whether procurement rules allow the contractor to be blacklisted from future tenders. Context: I am legal counsel at a public sector organisation. We have a three-year IT managed services contract with eighteen months remaining. The vendor has missed SLA targets in four of the last six months but no individual failure meets the material breach threshold in clause fifteen point two. The organisation wants to retender. Expectations: internal legal memo with a recommendation table &mdash; each option as a row, with columns for risk level, estimated cost exposure, and recommended path. Practical and direct tone &mdash; the CIO needs a clear yes or no with a risk rating. Source: clauses fifteen and eighteen and Schedule three of the IT managed services agreement, the vendor's SLA performance reports for the last six months, and the organisation's procurement policy extract on early termination and contractor debarment.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Now the model produces a proper options memo. It distinguishes between two exit paths with different risk profiles. It calculates the compensation exposure under the convenience clause. It flags that the debarment question depends on the procurement policy definition of "poor performance" &mdash; and tells you exactly which section to check. That's the difference between a search engine answer and a legal analysis.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Three examples. Three completely different practice areas &mdash; corporate, financial regulation, public sector procurement. Same four boxes every time. Goal, Context, Expectations, Source.  it works because you're just telling the model what you already know. You're not learning a new skill. You're organising what's already in your head.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> That's GCES. Next episode, we'll teach you the second major framework &mdash; COSTAR &mdash; and show you how the two relate. Same idea, different slicing.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> See you there.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> AI for Lawyers is designed by a practising lawyer. Alice and Dan are AI-generated voices &mdash; no legal advice here, just education.</p>
+
+        <p class="text-lg leading-relaxed text-ink-muted italic mt-8">The hosts on this podcast are AI-generated. Content is designed by a practising lawyer but is for educational purposes only &mdash; not legal advice. Visuals: FlashHead 1.3B.</p>
+
+    </article>
+</section>
+
+<!-- Sources -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-8">Sources &amp; references</h2>
+    <ol class="list-decimal list-inside space-y-4 text-base text-ink-light leading-relaxed">
+        <li><a href="https://sal.org.sg/wp-content/uploads/2025/10/Prompt-Engineering-Guide-2025-2nd-Edition.pdf" target="_blank" rel="noopener" class="text-red hover:text-red-soft border-b border-red/40 hover:border-red transition">Singapore Academy of Law &amp; Microsoft, <em>Prompt Engineering Guide</em> (2nd Edition, 2025)</a> &mdash; the GCES framework taught in this episode</li>
+    </ol>
+</section>
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            <a href="../lessons/lesson-10-episode-10-whats-an-agent-really.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 10 &mdash; What&rsquo;s an Agent, Really?</p>
+                </div>
+            </a>
+        </div>
+        <div class="text-right">
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-xs text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const bar = document.getElementById('progress-bar');
+    const timeEl = document.getElementById('current-time');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+
+    audio.addEventListener('play', function() {
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+    });
+    audio.addEventListener('pause', function() {
+        iconPause.classList.add('hidden');
+        iconPlay.classList.remove('hidden');
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        if (dragging) return;
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+
+    let dragging = false;
+    function seek(e) {
+        const rect = bar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        fill.style.width = (pct * 100) + '%';
+        dot.style.left = (pct * 100) + '%';
+        audio.currentTime = pct * audio.duration;
+    }
+    bar.addEventListener('mousedown', function(e) { dragging = true; seek(e); });
+    document.addEventListener('mousemove', function(e) { if (dragging) seek(e); });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    bar.addEventListener('touchstart', function(e) { dragging = true; seek(e.touches[0]); }, {passive: true});
+    document.addEventListener('touchmove', function(e) { if (dragging) seek(e.touches[0]); });
+    document.addEventListener('touchend', function() { dragging = false; });
+</script>
+
+</body>
+</html>

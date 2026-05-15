@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 13 — Prompt Engineering 101: The Principle — AI for Lawyers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{ink:'#1a1a1a','ink-light':'#4a4a4a','ink-muted':'#7a7a7a',red:'#991B1B','red-soft':'#B91C1C',rule:'#e5e5e5','rule-dark':'#1a1a1a',paper:'#FAFAF8'},fontFamily:{serif:['Lora','Georgia','serif'],sans:['Inter','sans-serif']}}}}</script>
+    <link rel="stylesheet" href="../assets/css/plyr.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y29ZNNR6VF"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Y29ZNNR6VF');</script>
+</head>
+<body class="bg-paper font-serif text-ink text-base antialiased">
+    <header class="border-b-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8">
+            <a href="../index.html" class="block text-center text-3xl font-bold tracking-tight hover:text-red transition-colors">AI for Lawyers</a>
+            <nav class="flex justify-center gap-8 mt-4 text-sm font-sans text-ink-muted">
+                <a href="../index.html" class="hover:text-red transition">Episodes</a>
+                <a href="../about.html" class="hover:text-red transition">Meet the Hosts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 min-h-[60vh]">
+
+<!-- Episode meta -->
+<div class="py-12 border-b border-rule">
+    <p class="font-sans text-sm tracking-widest uppercase text-red mb-6">Episode 13 &middot; Prompt Engineering 101</p>
+    <h1 class="text-4xl md:text-5xl font-bold leading-none mb-8">The Principle</h1>
+    <p class="text-ink-muted font-sans text-base">15 May 2026 &middot; 6:47 &middot; AI for Lawyers</p>
+</div>
+
+<!-- Video embed -->
+<div class="py-8 border-b border-rule">
+    <div class="relative w-full" style="padding-bottom: 56.25%;">
+        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg" src="https://www.youtube.com/embed/gCslKcSNgdU" title="Episode 13 — Prompt Engineering 101: The Principle" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Audio player -->
+<div class="py-8 border-b border-rule">
+    <div class="flex items-center gap-6">
+        <button id="play-btn" class="w-14 h-14 border-2 border-ink rounded-full flex items-center justify-center hover:bg-ink hover:text-paper transition flex-shrink-0 group" onclick="document.getElementById('player').paused ? document.getElementById('player').play() : document.getElementById('player').pause()">
+            <svg id="icon-play" class="w-6 h-6 ml-0.5 text-ink group-hover:text-paper" fill="currentColor" viewBox="0 0 20 20"><polygon points="6,4 16,10 6,16"/></svg>
+            <svg id="icon-pause" class="w-6 h-6 text-ink group-hover:text-paper hidden" fill="currentColor" viewBox="0 0 20 20"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
+        </button>
+        <div class="flex-1">
+            <audio id="player">
+                <source src="../audio/lesson-13-prompt-engineering-101-the-principle.mp3" type="audio/mpeg">
+            </audio>
+            <div id="progress-bar" class="h-3 bg-rule relative cursor-pointer" style="margin-top:-6px;padding-top:6px;padding-bottom:6px;">
+                <div class="h-px bg-rule relative">
+                    <div id="progress-fill" class="absolute top-0 left-0 h-px w-0 bg-red"></div>
+                    <div id="progress-dot" class="absolute -top-1.5 left-0 w-3 h-3 rounded-full bg-red"></div>
+                </div>
+            </div>
+            <div class="flex justify-between text-sm font-sans text-ink-muted mt-3">
+                <span id="current-time">0:00</span>
+                <span>6:47</span>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 flex items-center gap-4">
+        <a href="../audio/lesson-13-prompt-engineering-101-the-principle.mp3" download class="inline-flex items-center text-sm font-sans text-red hover:text-red-soft transition">
+            <svg class="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download Episode
+        </a>
+    </div>
+</div>
+
+<!-- Description -->
+<div class="py-12 border-b border-rule">
+    <p class="text-lg leading-relaxed italic text-ink-light">The hinge episode. Alice picks up the prompt engineering manual from Episodes 11 and 12 &mdash; and drops it. Every box in both frameworks was context. All of it. Three real prompts from a working lawyer that break every framework rule and still work, because the lawyer knew what context the model needed.</p>
+</div>
+
+<!-- Chapter Sections -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-10">Contents</h2>
+    <div class="space-y-10">
+
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">I.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">The Principle</h3>
+                <p class="text-base text-ink-light leading-relaxed">Every box in COSTAR and GCES was context. The frameworks were teaching you what context feels like. Now you know. One rule from here.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">II.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 1: Stream of Consciousness</h3>
+                <p class="text-base text-ink-light leading-relaxed">A corporate lawyer dumps their thoughts like instructing senior counsel &mdash; a SAFE conversion, a shareholder cap problem, parentheticals as &ldquo;show your working&rdquo; instructions. No framework. Works.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">III.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 2: One Sentence</h3>
+                <p class="text-base text-ink-light leading-relaxed">A precise legal research query about privity of contract and third-party enforcement. No role, no tone, no audience. Seven words of pure context do more work than most paragraphs.</p>
+            </div>
+        </div>
+
+        <div class="border-t border-rule"></div>
+        <div class="flex items-start gap-6">
+            <span class="font-sans text-base text-red w-8 text-right pt-1 flex-shrink-0 font-semibold">IV.</span>
+            <div>
+                <h3 class="text-xl font-bold mb-2">Example 3: The Conversation</h3>
+                <p class="text-base text-ink-light leading-relaxed">Two prompts, not one. The lawyer tells the model to search for facts, then layers new information and asks for re-evaluation. Iteration &mdash; the technique no framework teaches.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Transcript -->
+<section class="py-10 border-b border-rule">
+    <button
+        class="font-sans text-base text-red hover:text-red-soft transition flex items-center gap-2 group"
+        onclick="document.getElementById('transcript-body').classList.toggle('hidden'); this.querySelector('svg').classList.toggle('rotate-90');"
+    >
+        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        <span class="border-b border-red/40 group-hover:border-red">Show Transcript</span>
+    </button>
+    <article id="transcript-body" class="hidden mt-8 space-y-4">
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Welcome to AI for Lawyers. I'm Dan, here with Alice.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Two episodes. Two frameworks. You know the manual. Now meet the instructor.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> The people who wrote these frameworks did excellent work. They took something that felt like magic &mdash; talking to a machine and getting useful output &mdash; and they gave it structure. They gave you a language.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> They gave you all of that so you could reach the point where you don't need it.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Every box you filled &mdash; Goal, Context, Objective, Style, Tone, Audience, Expectations, Source &mdash; was context. All of it. You were supplying context the whole time. The frameworks were teaching you what context feels like.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Now you know. So you don't need the labels.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> One rule from here. Context. Everything else was just learning the word for it.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So the last two episodes were a setup.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> They were a genuine education. GCES works. COSTAR works. If you use them for the rest of your career, you'll write better prompts than most people. But the principle underneath both of them is simpler. Every box in both frameworks is just a way of saying: give the model what it needs to do the job. Context.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> And the principle is that once you understand that, you don't always need every box.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Exactly. If the only audience is yourself, you don't set the Audience box. If the model can search for context, you don't paste it in. And you can iterate rather than perfecting a single prompt. The frameworks are training wheels. Useful &mdash; genuinely useful &mdash; but the expert move is knowing when to take them off.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Prove it. Show me prompts from a working lawyer that break the framework rules and still work.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Three of them.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Example one. This is a corporate lawyer instructing their AI the way you'd instruct senior counsel. Stream of consciousness.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Here's the prompt. &quot;Act as a corporate lawyer who specialises in corporate finance. You are advising a pre-revenue company which has an upcoming equity round. The company has a legacy SAFE &mdash; explain what this is &mdash; that will convert on initial closing of the equity round. If SAFE conversion happens the company will have more than fifty shareholders, who are all small seed shareholders &mdash; explain why this will happen &mdash; which exceeds the maximum number of shareholders for a private company under the jurisdiction's companies legislation. The desire is to keep it under fifty shareholders even after the upcoming equity funding round. Client wants the simplest and lowest cost solution to solve this as the company has low cash flow until completion of the equity round.&quot;</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> No GCES structure. No COSTAR boxes. Just a brain dump.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> And it works. Because the context is dense and the question is specific. Look at the parentheticals &mdash; &quot;explain what this is,&quot; &quot;explain why this will happen.&quot; The lawyer is asking the model to confirm its own understanding before proceeding. That's how you instruct senior counsel. You dump your thoughts, they're capable enough to parse them, and you ask them to show their working.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> There's one piece of structure in there though. &quot;Act as a corporate lawyer.&quot;</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> She kept the role because it adds context. She threw away everything else because it wouldn't have. That's the principle in action. Keep what adds context, discard what doesn't.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Example two. The opposite end of the spectrum. Precise, tight, no role, no formatting instructions. Just a question.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> &quot;Under common law jurisdictions where there is the concept of privity of contract, what is the purpose of a clause that allows one contracting party to enforce the agreement directly against the other contracting party's subcontractors, who are not parties to the contract?&quot;</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That's one sentence.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> One sentence that does more work than most multi-paragraph prompts. Look at what's packed in there. The jurisdictional scope &mdash; common law. The conceptual anchor &mdash; privity of contract. The specific mechanism &mdash; third-party enforcement against subcontractors. And then the parenthetical: &quot;who are not parties to the contract.&quot; Seven words that tell the model: I already know the tension here. I'm flagging it so you address it directly.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Adding COSTAR boxes to that prompt would make it worse.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> It would add noise, not clarity. The prompt is already pure context. Every word is doing a job. Knowing when not to use the framework is part of the principle.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Example three. This one is different. It's a conversation &mdash; two prompts, not one. The lawyer is using the model's search capability to gather facts, then layering new information and asking for re-evaluation.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Prompt one. &quot;Search for news about a major cruise operator's cruise being cancelled in a port city &mdash; this just happened. If a person flew into that city for the cruise and it got cancelled due to engine issues, what legal remedies does that person have against the operator for recovery of the air ticket prices?&quot;</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So the lawyer doesn't paste in the facts. They tell the model to go find them.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> That's still context. It's just context the model fetches rather than context you supply. The principle holds &mdash; the model needs context to do the job. The source of that context can be you, or it can be a tool the model has access to.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> Then prompt two.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> &quot;The cruise was cancelled after one day, but they gave a full refund plus one free night hotel stay. Evaluate in light of these facts.&quot;</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> New facts change the analysis.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> And that's iteration. The prompt doesn't have to be complete on the first attempt. This is how lawyers actually think &mdash; facts arrive in layers, analysis adjusts. No framework teaches this. But the principle &mdash; context, context, context &mdash; naturally accommodates it. You just keep adding context until the answer is right.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> So every one of those prompts broke the framework rules.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> None of them suffered for it. They worked because the lawyer knew what context the model needed and supplied it &mdash; in whatever shape made sense. A brain dump. A single sentence. A two-step conversation. Three different shapes, one principle.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> That's the principle. That's the only rule.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-red">Alice:</span> Next episode &mdash; what happens when you deliberately withhold context. Specifically, when you don't want to give the model your conclusion. That's interrogation mode. See you then.</p>
+
+        <p class="text-lg leading-relaxed"><span class="font-semibold text-ink">Dan:</span> AI for Lawyers is designed by a practising lawyer. Alice and Dan are AI-generated voices &mdash; no legal advice here, just education.</p>
+
+        <p class="text-lg leading-relaxed text-ink-muted italic mt-8">The hosts on this podcast are AI-generated. Content is designed by a practising lawyer but is for educational purposes only &mdash; not legal advice. Visuals: LTX-2 + FlashHead 1.3B.</p>
+
+    </article>
+</section>
+
+<!-- Sources -->
+<section class="py-12 border-b border-rule">
+    <h2 class="font-sans text-sm tracking-widest uppercase text-ink-muted mb-8">Sources &amp; references</h2>
+    <ol class="list-decimal list-inside space-y-4 text-base text-ink-light leading-relaxed">
+        <li><a href="https://sal.org.sg/wp-content/uploads/2025/10/Prompt-Engineering-Guide-2025-2nd-Edition.pdf" target="_blank" rel="noopener" class="text-red hover:text-red-soft border-b border-red/40 hover:border-red transition">Singapore Academy of Law &amp; Microsoft, <em>Prompt Engineering Guide</em> (2nd Edition, 2025)</a> &mdash; the GCES and COSTAR frameworks deconstructed in this episode</li>
+    </ol>
+</section>
+
+<nav aria-label="Lesson navigation" class="py-10">
+    <div class="flex items-center justify-between">
+        <div>
+            <a href="../lessons/lesson-12-prompt-engineering-101-the-manual-costar.html" class="group inline-flex items-center text-ink-light hover:text-red transition-colors">
+                <svg class="w-5 h-5 mr-3 text-ink-muted group-hover:text-red transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <div>
+                    <p class="font-sans text-sm tracking-widest uppercase text-ink-muted">Previous</p>
+                    <p class="text-lg font-semibold">Episode 12 &mdash; PE 101: The Manual &mdash; COSTAR</p>
+                </div>
+            </a>
+        </div>
+        <div class="text-right">
+        </div>
+    </div>
+</nav>
+
+    </main>
+
+    <footer class="border-t-2 border-rule-dark">
+        <div class="max-w-3xl mx-auto px-6 py-8 text-center">
+            <p class="font-sans text-xs text-ink-muted">AI for Lawyers &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/plyr.js"></script>
+
+<script>
+    const audio = document.getElementById('player');
+    const fill = document.getElementById('progress-fill');
+    const dot = document.getElementById('progress-dot');
+    const bar = document.getElementById('progress-bar');
+    const timeEl = document.getElementById('current-time');
+    const iconPlay = document.getElementById('icon-play');
+    const iconPause = document.getElementById('icon-pause');
+
+    audio.addEventListener('play', function() {
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+    });
+    audio.addEventListener('pause', function() {
+        iconPause.classList.add('hidden');
+        iconPlay.classList.remove('hidden');
+    });
+
+    audio.addEventListener('timeupdate', function() {
+        if (dragging) return;
+        const pct = (audio.currentTime / audio.duration * 100) || 0;
+        fill.style.width = pct + '%';
+        dot.style.left = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60);
+        timeEl.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    });
+
+    let dragging = false;
+    function seek(e) {
+        const rect = bar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        fill.style.width = (pct * 100) + '%';
+        dot.style.left = (pct * 100) + '%';
+        audio.currentTime = pct * audio.duration;
+    }
+    bar.addEventListener('mousedown', function(e) { dragging = true; seek(e); });
+    document.addEventListener('mousemove', function(e) { if (dragging) seek(e); });
+    document.addEventListener('mouseup', function() { dragging = false; });
+    bar.addEventListener('touchstart', function(e) { dragging = true; seek(e.touches[0]); }, {passive: true});
+    document.addEventListener('touchmove', function(e) { if (dragging) seek(e.touches[0]); });
+    document.addEventListener('touchend', function() { dragging = false; });
+</script>
+
+</body>
+</html>
